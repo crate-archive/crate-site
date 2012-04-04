@@ -1,0 +1,315 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Aymeric Augustin <aymeric.augustin@m4x.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: Crate.io\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-04 08:27+0000\n"
+"PO-Revision-Date: 2012-04-04 20:50+0000\n"
+"Last-Translator: Aymeric Augustin <aymeric.augustin@m4x.org>\n"
+"Language-Team: French (http://www.transifex.net/projects/p/crateio/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: crate_project/apps/packages/search_indexes.py:14
+msgid "Other/Proprietary"
+msgstr "Autre/Propriétaire"
+
+#: crate_project/apps/packages/search_indexes.py:75
+#: crate_project/apps/packages/search_indexes.py:83
+#: crate_project/apps/packages/search_indexes.py:87
+#: crate_project/apps/packages/search_indexes.py:91
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: crate_project/apps/packages/views.py:46
+#: crate_project/apps/packages/simple/views.py:85
+#: crate_project/apps/pypi/simple/views.py:65
+#: crate_project/apps/pypi/simple/views.py:115
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Aucun %(verbose_name)s trouvé pour cette recherche"
+
+#: crate_project/apps/search/forms.py:10
+msgid "Has Releases"
+msgstr "Publié"
+
+#: crate_project/apps/search/forms.py:17
+#: crate_project/templates/site_base.html:52
+#: crate_project/templates/search/results.html:34
+#: crate_project/templates/search/search.html:32
+#: crate_project/templates/search/search.html:34
+msgid "Search"
+msgstr "Rechercher"
+
+#: crate_project/apps/search/views.py:66
+msgid "Page is not 'last', nor can it be converted to an int."
+msgstr "La page n'est pas 'last', et ne peut pas être convertie en un entier."
+
+#: crate_project/apps/search/views.py:71
+#, python-format
+msgid "Invalid page (%(page_number)s)"
+msgstr "Page non valide (%(page_number)s)"
+
+#: crate_project/templates/homepage.html:5
+#: crate_project/templates/search/search.html:9
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: crate_project/templates/site_base.html:41
+msgid "Beta"
+msgstr "Beta"
+
+#: crate_project/templates/site_base.html:46
+#: crate_project/templates/favorites/favorite_list.html:5
+#: crate_project/templates/favorites/favorite_list.html:9
+msgid "My Favorites"
+msgstr "Mes préférés"
+
+#: crate_project/templates/packages/release_detail.html:36
+msgid "Package Deleted"
+msgstr "Paquet effacé"
+
+#: crate_project/templates/packages/release_detail.html:37
+msgid ""
+"This package has been deleted, but it is still available for download for "
+"other packages or projects that may have depended on it."
+msgstr "Ce paquet a été effacé, mais il est toujours disponible au téléchargement au cas où d'autres paquets ou projets en dépendraient."
+
+#: crate_project/templates/packages/release_detail.html:47
+msgid "Install"
+msgstr "Installer"
+
+#: crate_project/templates/packages/release_detail.html:59
+msgid "Description"
+msgstr "Description"
+
+#: crate_project/templates/packages/release_detail.html:60
+msgid "Changelog"
+msgstr "Journal"
+
+#: crate_project/templates/packages/release_detail.html:61
+msgid "License"
+msgstr "Licence"
+
+#: crate_project/templates/packages/release_detail.html:62
+#: crate_project/templates/packages/release_detail.html:261
+msgid "Info"
+msgstr "Info"
+
+#: crate_project/templates/packages/release_detail.html:63
+msgid "Files"
+msgstr "Fichiers"
+
+#: crate_project/templates/packages/release_detail.html:64
+#, python-format
+msgid "All Versions (%(version_count)s)"
+msgstr "Toutes les versions (%(version_count)s)"
+
+#: crate_project/templates/packages/release_detail.html:65
+msgid "History"
+msgstr "Historique"
+
+#: crate_project/templates/packages/release_detail.html:77
+msgid "No Description Provided."
+msgstr "Pas de description disponible."
+
+#: crate_project/templates/packages/release_detail.html:84
+msgid "Author"
+msgstr "Auteur"
+
+#: crate_project/templates/packages/release_detail.html:91
+msgid "Links"
+msgstr "Liens"
+
+#: crate_project/templates/packages/release_detail.html:107
+msgid "Classifiers"
+msgstr "Classificateurs"
+
+#: crate_project/templates/packages/release_detail.html:119
+msgid "Requirements"
+msgstr "Requiert"
+
+#: crate_project/templates/packages/release_detail.html:132
+msgid "Provides"
+msgstr "Fournit"
+
+#: crate_project/templates/packages/release_detail.html:145
+msgid "Obsoletes"
+msgstr "Remplace"
+
+#: crate_project/templates/packages/release_detail.html:174
+msgid "File"
+msgstr "Fichier"
+
+#: crate_project/templates/packages/release_detail.html:175
+msgid "Type"
+msgstr "Type"
+
+#: crate_project/templates/packages/release_detail.html:176
+msgid "Python Version"
+msgstr "Version de Python"
+
+#: crate_project/templates/packages/release_detail.html:177
+msgid "Uploaded On"
+msgstr "Téléversé le"
+
+#: crate_project/templates/packages/release_detail.html:178
+msgid "Size"
+msgstr "Taille"
+
+#: crate_project/templates/packages/release_detail.html:179
+#: crate_project/templates/packages/release_detail.html:302
+msgid "Downloads"
+msgstr "Téléchargements"
+
+#: crate_project/templates/packages/release_detail.html:195
+#, python-format
+msgid ""
+"There are No Files for This Package's Release, but try the <a "
+"href=\"%(uri)s\">author's downloads</a> for this release."
+msgstr "Il n'y a pas de fichiers pour cette version du paquet, mais vous pouvez essayer la <a href=\"%(uri)s\">page de téléchargement de l'auteur</a> pour cette version."
+
+#: crate_project/templates/packages/release_detail.html:197
+msgid "There are No Files for This Package's Release."
+msgstr "Il n'y a pas de fichiers pour cette version du paquet."
+
+#: crate_project/templates/packages/release_detail.html:227
+#: crate_project/templates/packages/release_detail.html:250
+msgid "Version"
+msgstr "Version"
+
+#: crate_project/templates/packages/release_detail.html:228
+msgid "Release Date"
+msgstr "Date de publication"
+
+#: crate_project/templates/packages/release_detail.html:248
+msgid "Date"
+msgstr "Date"
+
+#: crate_project/templates/packages/release_detail.html:249
+msgid "Package"
+msgstr "Paquet"
+
+#: crate_project/templates/packages/release_detail.html:251
+msgid "Action"
+msgstr "Action"
+
+#: crate_project/templates/packages/release_detail.html:265
+msgid "This Package is older than the start of History Tracking."
+msgstr "Ce paquet est antérieur à la mise en place de l'historique."
+
+#: crate_project/templates/packages/release_detail.html:284
+msgid "Download URI"
+msgstr "URI de téléchargement"
+
+#: crate_project/templates/packages/release_detail.html:304
+#, python-format
+msgid "<span class=\"count\">%(count)s</span> total downloads"
+msgstr "<span class=\"count\">%(count)s</span> téléchargements au total"
+
+#. Translators: This is used to display how many downloads a package has
+#. gotten, e.g. 12 for this version.
+#: crate_project/templates/packages/release_detail.html:306
+#, python-format
+msgid "<span class=\"count\">%(count)s</span> for this version"
+msgstr "<span class=\"count\">%(count)s</span> pour cette version"
+
+#: crate_project/templates/packages/release_detail.html:309
+msgid "Evaluation"
+msgstr "Évaluation"
+
+#: crate_project/templates/packages/release_detail.html:309
+msgid "mouse over for details"
+msgstr "survoler pour plus d'informations"
+
+#: crate_project/templates/packages/release_detail.html:314
+msgid "Latest Versions"
+msgstr "Versions les plus récentes"
+
+#: crate_project/templates/profiles/_profile_info.html:3
+msgid "Name"
+msgstr "Nom"
+
+#: crate_project/templates/profiles/_profile_info.html:4
+msgid "About"
+msgstr "À propos"
+
+#: crate_project/templates/profiles/_profile_info.html:5
+msgid "Location"
+msgstr "Emplacement"
+
+#: crate_project/templates/profiles/_profile_info.html:6
+msgid "Website"
+msgstr "Site web"
+
+#: crate_project/templates/search/results.html:55
+msgid "Refine Results"
+msgstr "Raffiner les résultats"
+
+#: crate_project/templates/search/results.html:59
+msgid "By Python Version"
+msgstr "Par version de Python"
+
+#: crate_project/templates/search/results.html:74
+msgid "By Operating System"
+msgstr "Par système d'exploitation"
+
+#: crate_project/templates/search/results.html:89
+msgid "By License"
+msgstr "Par licence"
+
+#: crate_project/templates/search/results.html:104
+msgid "By Implementation"
+msgstr "Par implémentation"
+
+#: crate_project/templates/search/results.html:128
+msgid "No results found."
+msgstr "Aucun résultat trouvé."
+
+#: crate_project/templates/search/results.html:135
+msgid "Previous"
+msgstr "Précédent"
+
+#: crate_project/templates/search/results.html:141
+msgid "Next"
+msgstr "Suivant"
+
+#: crate_project/templates/search/search.html:22
+msgid ""
+"Crate.io is a Python Package Index with a heavy focus on making it easy to "
+"find the packages you want, and reliably hosting them for easy installation."
+msgstr "Crate.io est un <i>Python Package Index</i> conçu pour faciliter la recherche des paquets et leur installation grâce à un hébergement fiable."
+
+#: crate_project/templates/search/search.html:45
+#, python-format
+msgid ""
+"<span class=\"downloads\">%(count)s downloads</span> of %(total)s packages "
+"since %(since)s"
+msgstr "<span class=\"downloads\">%(count)s téléchargements</span> de %(total)s paquets depuis le %(since)s"
+
+#: crate_project/templates/search/search.html:50
+msgid "New Packages"
+msgstr "Nouveaux paquets"
+
+#: crate_project/templates/search/search.html:55
+msgid "Just Updated"
+msgstr "Mis à jour récemment"
+
+#: crate_project/templates/search/partials/package.html:9
+#: crate_project/templates/search/partials/package.html:11
+#, python-format
+msgid "by %(author)s"
+msgstr "par %(author)s"
+
+#: crate_project/templates/search/partials/package.html:17
+#, python-format
+msgid "<span class=\"count\">%(downloads)s</span> downloads"
+msgstr "<span class=\"count\">%(downloads)s</span> téléchargements"
