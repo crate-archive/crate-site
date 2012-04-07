@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-05 22:09+0000\n"
+"POT-Creation-Date: 2012-04-07 17:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,6 +63,18 @@ msgstr ""
 
 #: crate_project/settings/base.py:51
 msgid "French"
+msgstr ""
+
+#: crate_project/settings/base.py:52
+msgid "German"
+msgstr ""
+
+#: crate_project/settings/base.py:53
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: crate_project/settings/base.py:54
+msgid "Russian"
 msgstr ""
 
 #: crate_project/templates/homepage.html:5
