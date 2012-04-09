@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crate.io\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-05 22:09+0000\n"
-"PO-Revision-Date: 2012-04-06 05:17+0000\n"
-"Last-Translator: Henrique Bastos <henrique@bastos.net>\n"
+"POT-Creation-Date: 2012-04-09 21:10+0000\n"
+"PO-Revision-Date: 2012-04-09 21:10+0000\n"
+"Last-Translator: Donald Stufft <donald.stufft@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/crateio/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,8 +64,28 @@ msgid "English"
 msgstr "Inglês"
 
 #: crate_project/settings/base.py:51
+msgid "Spanish"
+msgstr ""
+
+#: crate_project/settings/base.py:52
 msgid "French"
 msgstr "Francês"
+
+#: crate_project/settings/base.py:53
+msgid "German"
+msgstr "Alemão"
+
+#: crate_project/settings/base.py:54
+msgid "Portuguese (Brazil)"
+msgstr "Português(Brasil)"
+
+#: crate_project/settings/base.py:55
+msgid "Russian"
+msgstr "Russo"
+
+#: crate_project/settings/base.py:56
+msgid "Swedish"
+msgstr "Suéco"
 
 #: crate_project/templates/homepage.html:5
 #: crate_project/templates/search/search.html:9
