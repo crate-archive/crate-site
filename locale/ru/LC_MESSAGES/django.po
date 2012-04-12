@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Crate.io\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-12 12:13+0000\n"
-"PO-Revision-Date: 2012-04-12 13:26+0000\n"
+"PO-Revision-Date: 2012-04-12 14:03+0000\n"
 "Last-Translator: Eugene MechanisM <contact@mechanism.name>\n"
 "Language-Team: Russian (http://www.transifex.net/projects/p/crateio/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgid ""
 "Python package what order the versions should go in, but with PEP386 we can "
 "now intelligently sort by version...<br /><br />But only if the version "
 "numbers are compatible!"
-msgstr ""
+msgstr "PEP386 определяет специфический разрешенный синтаксис для версий Python пакетов.<br /><br />Раньше было невозможно с точностью определить по любому Python пакету в каком порядке должны идти версии, но с PEP386 мы можем грамотно сортировать по версии...<br /><br />Но только в том случае, если номера версий совместимы!"
 
 #: crate_project/apps/packages/evaluators.py:31
 msgid ""
@@ -89,7 +89,7 @@ msgid ""
 "the author means that installing this package depends on the authors server "
 "staying up, adding another link in the chain that can cause your "
 "installation to fail"
-msgstr "А вы знали что пакеты числящиеся в PyPI не обязаны там размещаться?<br /><br />Когда ваш менеджер пакетов пытается установить пакет из PyPI, он ищет в нескольких расположениях, одним из которых может быть указанный автором адрес откуда пакет может быть скачан.<br /><br />Пакеты размещенные у автора подразумевают что установка пакетов зависит от работы сервера автора, добавляя другую ссылку в цепочку может привести к неудавшейся установке"
+msgstr "А вы знали что пакеты числящиеся в PyPI не обязаны там размещаться?<br /><br />Когда ваш менеджер пакетов пытается установить пакет из PyPI, он ищет в нескольких расположениях, одним из которых может быть указанный автором адрес откуда пакет может быть скачан.<br /><br />Пакеты размещенные у автора подразумевают что установка пакетов зависит от работы сервера автора, добавляя другую ссылку в цепочку может привести к неудачной установке"
 
 #: crate_project/apps/packages/evaluators.py:63
 msgid "Package is hosted on PyPI"
@@ -370,11 +370,11 @@ msgstr "Действие"
 
 #: crate_project/templates/packages/release_detail.html:265
 msgid "This Package is older than the start of History Tracking."
-msgstr "Этот пакет старее чем появилась история версий пакетов."
+msgstr "Этот пакет старее чем началась история версий пакетов."
 
 #: crate_project/templates/packages/release_detail.html:284
 msgid "Download URI"
-msgstr "URI для скачивания"
+msgstr "Адрес для Скачивания"
 
 #: crate_project/templates/packages/release_detail.html:304
 #, python-format
@@ -390,7 +390,7 @@ msgstr "<span class=\"count\">%(count)s</span> для этой версии"
 
 #: crate_project/templates/packages/release_detail.html:309
 msgid "Evaluation"
-msgstr "Оценка"
+msgstr "Состояние"
 
 #: crate_project/templates/packages/release_detail.html:309
 msgid "mouse over for details"
@@ -422,15 +422,15 @@ msgstr "Уточнить результаты"
 
 #: crate_project/templates/search/results.html:59
 msgid "By Python Version"
-msgstr "Версия Python"
+msgstr "По Версии Python"
 
 #: crate_project/templates/search/results.html:74
 msgid "By Operating System"
-msgstr "Операционная система"
+msgstr "По Операционной системе"
 
 #: crate_project/templates/search/results.html:89
 msgid "By License"
-msgstr "Лицензия"
+msgstr "По Лицензии"
 
 #: crate_project/templates/search/results.html:104
 msgid "By Implementation"
@@ -452,7 +452,7 @@ msgstr "Следующий"
 msgid ""
 "Crate.io is a Python Package Index with a heavy focus on making it easy to "
 "find the packages you want, and reliably hosting them for easy installation."
-msgstr "Crate.io это Индекс Пакетов Python с фокусом на легкий поиск нужных пакетов, и надежное размещение для легкой установки."
+msgstr "Crate.io это Индекс Python Пакетов с фокусом на легкий поиск нужных пакетов, и надежное размещение для легкой установки."
 
 #: crate_project/templates/search/search.html:45
 #, python-format
@@ -467,13 +467,13 @@ msgstr "Новые Пакеты"
 
 #: crate_project/templates/search/search.html:55
 msgid "Just Updated"
-msgstr "Только что обновлённые"
+msgstr "Недавно Обновлённые"
 
 #: crate_project/templates/search/partials/package.html:9
 #: crate_project/templates/search/partials/package.html:11
 #, python-format
 msgid "by %(author)s"
-msgstr "на %(author)s"
+msgstr "от %(author)s"
 
 #: crate_project/templates/search/partials/package.html:17
 #, python-format
