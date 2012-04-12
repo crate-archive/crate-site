@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crate.io\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 12:13+0000\n"
-"PO-Revision-Date: 2012-04-12 12:15+0000\n"
+"POT-Creation-Date: 2012-04-12 22:10+0000\n"
+"PO-Revision-Date: 2012-04-12 22:11+0000\n"
 "Last-Translator: Donald Stufft <donald.stufft@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/crateio/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -135,15 +135,15 @@ msgstr ""
 msgid "Unavailable on <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:331
+#: crate_project/apps/packages/models.py:347
 msgid "Source"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:336
+#: crate_project/apps/packages/models.py:352
 msgid "Dumb Binary Distribution"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:337
+#: crate_project/apps/packages/models.py:353
 msgid "Windows Installer Binary Distribution"
 msgstr ""
 
@@ -186,34 +186,6 @@ msgstr "A página não é a 'última', ou não consegue ser convertida para um i
 #, python-format
 msgid "Invalid page (%(page_number)s)"
 msgstr "Página inválida (%(page_number)s)"
-
-#: crate_project/settings/base.py:50
-msgid "English"
-msgstr "Inglês"
-
-#: crate_project/settings/base.py:51
-msgid "Spanish"
-msgstr "Espanhol"
-
-#: crate_project/settings/base.py:52
-msgid "French"
-msgstr "Francês"
-
-#: crate_project/settings/base.py:53
-msgid "German"
-msgstr "Alemão"
-
-#: crate_project/settings/base.py:54
-msgid "Portuguese (Brazil)"
-msgstr "Português (Brasil)"
-
-#: crate_project/settings/base.py:55
-msgid "Russian"
-msgstr "Russo"
-
-#: crate_project/settings/base.py:56
-msgid "Swedish"
-msgstr "Suéco"
 
 #: crate_project/templates/homepage.html:5
 #: crate_project/templates/search/search.html:9

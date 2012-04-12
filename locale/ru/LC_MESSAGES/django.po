@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crate.io\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 12:13+0000\n"
-"PO-Revision-Date: 2012-04-12 14:03+0000\n"
-"Last-Translator: Eugene MechanisM <contact@mechanism.name>\n"
+"POT-Creation-Date: 2012-04-12 22:10+0000\n"
+"PO-Revision-Date: 2012-04-12 22:11+0000\n"
+"Last-Translator: Donald Stufft <donald.stufft@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.net/projects/p/crateio/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,15 +136,15 @@ msgstr "Есть на <a href=\"%s\">Read The Docs</a>"
 msgid "Unavailable on <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 msgstr "Нет на <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 
-#: crate_project/apps/packages/models.py:331
+#: crate_project/apps/packages/models.py:347
 msgid "Source"
 msgstr "Исходный код"
 
-#: crate_project/apps/packages/models.py:336
+#: crate_project/apps/packages/models.py:352
 msgid "Dumb Binary Distribution"
 msgstr "Бинарный Дистрибутив"
 
-#: crate_project/apps/packages/models.py:337
+#: crate_project/apps/packages/models.py:353
 msgid "Windows Installer Binary Distribution"
 msgstr "Бинарный Дистрибутив Установщика Windows"
 
@@ -187,34 +187,6 @@ msgstr "Страница не последняя и не может быть п�
 #, python-format
 msgid "Invalid page (%(page_number)s)"
 msgstr "Неверная страница (%(page_number)s)"
-
-#: crate_project/settings/base.py:50
-msgid "English"
-msgstr "Английский"
-
-#: crate_project/settings/base.py:51
-msgid "Spanish"
-msgstr "Испанский"
-
-#: crate_project/settings/base.py:52
-msgid "French"
-msgstr "Французский"
-
-#: crate_project/settings/base.py:53
-msgid "German"
-msgstr "Немецкий"
-
-#: crate_project/settings/base.py:54
-msgid "Portuguese (Brazil)"
-msgstr "Португальский (Бразилия)"
-
-#: crate_project/settings/base.py:55
-msgid "Russian"
-msgstr "Русский"
-
-#: crate_project/settings/base.py:56
-msgid "Swedish"
-msgstr "Шведский"
 
 #: crate_project/templates/homepage.html:5
 #: crate_project/templates/search/search.html:9

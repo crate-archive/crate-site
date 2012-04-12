@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 12:13+0000\n"
+"POT-Creation-Date: 2012-04-12 22:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,15 +133,15 @@ msgstr ""
 msgid "Unavailable on <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:331
+#: crate_project/apps/packages/models.py:347
 msgid "Source"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:336
+#: crate_project/apps/packages/models.py:352
 msgid "Dumb Binary Distribution"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:337
+#: crate_project/apps/packages/models.py:353
 msgid "Windows Installer Binary Distribution"
 msgstr ""
 
@@ -183,34 +183,6 @@ msgstr ""
 #: crate_project/apps/search/views.py:71
 #, python-format
 msgid "Invalid page (%(page_number)s)"
-msgstr ""
-
-#: crate_project/settings/base.py:50
-msgid "English"
-msgstr ""
-
-#: crate_project/settings/base.py:51
-msgid "Spanish"
-msgstr ""
-
-#: crate_project/settings/base.py:52
-msgid "French"
-msgstr ""
-
-#: crate_project/settings/base.py:53
-msgid "German"
-msgstr ""
-
-#: crate_project/settings/base.py:54
-msgid "Portuguese (Brazil)"
-msgstr ""
-
-#: crate_project/settings/base.py:55
-msgid "Russian"
-msgstr ""
-
-#: crate_project/settings/base.py:56
-msgid "Swedish"
 msgstr ""
 
 #: crate_project/templates/homepage.html:5
