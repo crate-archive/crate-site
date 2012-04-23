@@ -1,17 +1,17 @@
-# English translations for Crate.
+# Translations template for Crate.
 # Copyright (C) 2012 Crate
 # This file is distributed under the same license as the Crate project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Crate VERSION\n"
 "Report-Msgid-Bugs-To: support@crate.io\n"
 "POT-Creation-Date: 2012-04-23 06:56-0400\n"
-"PO-Revision-Date: 2012-04-23 06:53-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
