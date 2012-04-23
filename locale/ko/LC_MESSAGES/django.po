@@ -78,7 +78,7 @@ msgstr "<a href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>과 호�
 
 #: crate_project/apps/packages/evaluators.py:57
 msgid "Package Hosting"
-msgstr "패키지 호승팅"
+msgstr "패키지 호스팅"
 
 #: crate_project/apps/packages/evaluators.py:59
 msgid ""
