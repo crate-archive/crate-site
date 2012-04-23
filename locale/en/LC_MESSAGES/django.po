@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crate VERSION\n"
 "Report-Msgid-Bugs-To: support@crate.io\n"
-"POT-Creation-Date: 2012-04-23 09:49-0400\n"
+"POT-Creation-Date: 2012-04-23 11:57-0400\n"
 "PO-Revision-Date: 2012-04-23 06:53-0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -250,6 +250,10 @@ msgstr ""
 #: crate_project/templates/homepage.html:58
 #, python-format
 msgid "%(number)s <span class=\"info-label\">downloads</span>"
+msgstr ""
+
+#: crate_project/templates/homepage.html:64
+msgid "Why Crate?"
 msgstr ""
 
 #: crate_project/templates/site_base.html:8
@@ -938,10 +942,4 @@ msgstr ""
 #, python-format
 msgid "<span class=\"count\">%(downloads)s</span> downloads"
 msgstr ""
-
-#~ msgid "Crate is a better Python package index."
-#~ msgstr ""
-
-#~ msgid "Why Crate?"
-#~ msgstr ""
 
