@@ -1,21 +1,23 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# English translations for Crate.
+# Copyright (C) 2012 Crate
+# This file is distributed under the same license as the Crate project.
 # 
 # Translators:
 #   <cifali.filipe@gmail.com>, 2012.
+# Donald Stufft <donald.stufft@gmail.com>, 2012.
 # Henrique Bastos <henrique@bastos.net>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Crate.io\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 22:10+0000\n"
-"PO-Revision-Date: 2012-04-12 22:11+0000\n"
+"Report-Msgid-Bugs-To: support@crate.io\n"
+"POT-Creation-Date: 2012-04-23 09:49-0400\n"
+"PO-Revision-Date: 2012-04-23 14:34+0000\n"
 "Last-Translator: Donald Stufft <donald.stufft@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/crateio/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
@@ -24,7 +26,7 @@ msgid "Package Created"
 msgstr ""
 
 #: crate_project/apps/history/models.py:17
-#: crate_project/templates/packages/release_detail.html:36
+#: crate_project/templates/packages/partials/yanked.html:3
 msgid "Package Deleted"
 msgstr "Pacote Deletado"
 
@@ -44,11 +46,11 @@ msgstr ""
 msgid "File Removed"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:16
+#: crate_project/apps/packages/evaluators.py:25
 msgid "PEP386 Compatibility"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:17
+#: crate_project/apps/packages/evaluators.py:26
 msgid ""
 "PEP386 defines a specific allowed syntax for Python package versions.<br "
 "/><br />Previously it was impossible to accurately determine across any "
@@ -57,29 +59,29 @@ msgid ""
 "numbers are compatible!"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:31
+#: crate_project/apps/packages/evaluators.py:37
 msgid ""
 "Compatible with <a "
 "href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:37
+#: crate_project/apps/packages/evaluators.py:43
 msgid ""
 "Almost Compatible with <a "
 "href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:43
+#: crate_project/apps/packages/evaluators.py:49
 msgid ""
 "Incompatible with <a "
 "href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:48
+#: crate_project/apps/packages/evaluators.py:57
 msgid "Package Hosting"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:49
+#: crate_project/apps/packages/evaluators.py:59
 msgid ""
 "Did you know that packages listed on PyPI aren't required to host there?<br "
 "/><br />When your package manager tries to install a package from PyPI it "
@@ -90,23 +92,23 @@ msgid ""
 "installation to fail"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:63
+#: crate_project/apps/packages/evaluators.py:74
 msgid "Package is hosted on PyPI"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:68
+#: crate_project/apps/packages/evaluators.py:80
 msgid "Package isn't hosted on PyPI"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:73
+#: crate_project/apps/packages/evaluators.py:86
 msgid "No Package Hosting"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:78
+#: crate_project/apps/packages/evaluators.py:94
 msgid "Documentation hosted on Read The Docs"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:79
+#: crate_project/apps/packages/evaluators.py:96
 msgid ""
 "Documentation can be one of the most important parts of any library. Even "
 "more important than just having documentation, is making sure that people "
@@ -120,30 +122,30 @@ msgid ""
 "href='mailto:support@crate.io'>support@crate.io</a></small>"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:107
+#: crate_project/apps/packages/evaluators.py:127
 msgid ""
 "There was an error with the <a href=\"http://readthedocs.org/\">Read The "
 "Docs</a> API."
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:122
+#: crate_project/apps/packages/evaluators.py:143
 #, python-format
 msgid "Available on <a href=\"%s\">Read The Docs</a>"
 msgstr ""
 
-#: crate_project/apps/packages/evaluators.py:127
+#: crate_project/apps/packages/evaluators.py:149
 msgid "Unavailable on <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:347
+#: crate_project/apps/packages/models.py:343
 msgid "Source"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:352
+#: crate_project/apps/packages/models.py:348
 msgid "Dumb Binary Distribution"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:353
+#: crate_project/apps/packages/models.py:349
 msgid "Windows Installer Binary Distribution"
 msgstr ""
 
@@ -158,8 +160,8 @@ msgstr "Outro/Proprietário"
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: crate_project/apps/packages/views.py:46
-#: crate_project/apps/packages/simple/views.py:85
+#: crate_project/apps/packages/views.py:49
+#: crate_project/apps/packages/simple/views.py:79
 #: crate_project/apps/pypi/simple/views.py:65
 #: crate_project/apps/pypi/simple/views.py:115
 #, python-format
@@ -171,10 +173,8 @@ msgid "Has Releases"
 msgstr "Tem versões"
 
 #: crate_project/apps/search/forms.py:17
-#: crate_project/templates/site_base.html:52
-#: crate_project/templates/search/results.html:34
-#: crate_project/templates/search/search.html:32
-#: crate_project/templates/search/search.html:34
+#: crate_project/templates/homepage.html:28
+#: crate_project/templates/site_base.html:19
 msgid "Search"
 msgstr "Busca"
 
@@ -187,266 +187,764 @@ msgstr "A página não é a 'última', ou não consegue ser convertida para um i
 msgid "Invalid page (%(page_number)s)"
 msgstr "Página inválida (%(page_number)s)"
 
-#: crate_project/templates/homepage.html:5
-#: crate_project/templates/search/search.html:9
+#: crate_project/templates/404.html:3
+msgid "Not Found"
+msgstr "Não encontrado"
+
+#: crate_project/templates/404.html:7
+msgid "Page not found"
+msgstr ""
+
+#: crate_project/templates/404.html:8
+msgid "We're sorry but that page could not be found."
+msgstr "Lamentamos mas a página não pôde ser encontrada."
+
+#: crate_project/templates/500.html:3
+msgid "Server Error"
+msgstr "Erro no servidor"
+
+#: crate_project/templates/500.html:7
+msgid "Something went wrong"
+msgstr ""
+
+#: crate_project/templates/500.html:8
+msgid ""
+"We're sorry but a server error has occurred. We've been notified and will "
+"look into it as soon as possible."
+msgstr "Lamentamos, mas ocorreu um erro no servidor. Fomos notificados e vamos analisá-la o mais rápido possível."
+
+#: crate_project/templates/_account_bar.html:7
+#: crate_project/templates/account/base.html:7
+#: crate_project/templates/account/email.html:5
+msgid "Account"
+msgstr "Conta"
+
+#: crate_project/templates/_account_bar.html:8
+msgid "Admin"
+msgstr "Administrador"
+
+#: crate_project/templates/_account_bar.html:10
+#: crate_project/templates/django_openid/login.html:23
+msgid "Log out"
+msgstr "Sair"
+
+#: crate_project/templates/_account_bar.html:14
+#, python-format
+msgid ""
+"\n"
+"            <li><a href=\"%(login_url)s\">Log in</a></li>\n"
+"            <li class=\"navbar-text\">or</li>\n"
+"            <li><a href=\"%(signup_url)s\">Sign up</a></li>\n"
+"          "
+msgstr ""
+
+#: crate_project/templates/homepage.html:3
 msgid "Welcome"
 msgstr "Bem-vindo"
 
-#: crate_project/templates/site_base.html:41
+#: crate_project/templates/homepage.html:42
+msgid "Crate is a new kind of Python package index."
+msgstr ""
+
+#: crate_project/templates/homepage.html:51
+#, python-format
+msgid "%(number)s <span class=\"info-label\">packages</span>"
+msgstr ""
+
+#: crate_project/templates/homepage.html:58
+#, python-format
+msgid "%(number)s <span class=\"info-label\">downloads</span>"
+msgstr ""
+
+#: crate_project/templates/site_base.html:8
 msgid "Beta"
 msgstr "Beta"
 
-#: crate_project/templates/site_base.html:46
-#: crate_project/templates/favorites/favorite_list.html:5
-#: crate_project/templates/favorites/favorite_list.html:9
+#: crate_project/templates/site_base.html:14
+#: crate_project/templates/favorites/favorite_list.html:3
+#: crate_project/templates/favorites/favorite_list.html:7
 msgid "My Favorites"
 msgstr "Meus Favoritos"
 
-#: crate_project/templates/favorites/favorite_list.html:20
+#: crate_project/templates/account/_terms.html:4
+#, python-format
+msgid ""
+"By clicking \"Sign Up\", you are indicating that you have read and agree to "
+"the <a href=\"%(terms_url)s\">Terms of Use</a> and <a "
+"href=\"%(privacy_url)s\">Privacy Policy</a>."
+msgstr "Ao clicar em \"Entrar\", você indica que leu e concorda com os <a href=\"%(terms_url)s\">Termos de Uso</a> e <a href=\"%(privacy_url)s\">Política de Privacidade</a>."
+
+#: crate_project/templates/account/base.html:8
+#: crate_project/templates/account/email.html:9
+msgid "Email Addresses"
+msgstr "Endereços de e-mail"
+
+#: crate_project/templates/account/base.html:9
+#: crate_project/templates/django_openid/associations.html:3
+msgid "OpenID Associations"
+msgstr "Associações OpenID"
+
+#: crate_project/templates/account/base.html:12
+#: crate_project/templates/account/password_change.html:5
+#: crate_project/templates/account/password_change.html:9
+#: crate_project/templates/account/password_reset_from_key.html:5
+msgid "Change Password"
+msgstr "Alterar senha"
+
+#: crate_project/templates/account/base.html:14
+#: crate_project/templates/account/password_set.html:5
+msgid "Set Password"
+msgstr "Definir senha"
+
+#: crate_project/templates/account/base.html:18
+#: crate_project/templates/account/password_delete.html:3
+#: crate_project/templates/account/password_delete.html:7
+msgid "Delete Password"
+msgstr "Excluir senha"
+
+#: crate_project/templates/account/base.html:21
+#: crate_project/templates/account/language_change.html:5
+msgid "Language"
+msgstr "Idioma"
+
+#: crate_project/templates/account/base.html:22
+#: crate_project/templates/account/timezone_change.html:5
+msgid "Timezone"
+msgstr "Fuso horário"
+
+#: crate_project/templates/account/email.html:10
+msgid "Manage your email addresses."
+msgstr ""
+
+#: crate_project/templates/account/email.html:21
+msgid "verified"
+msgstr "verificado"
+
+#: crate_project/templates/account/email.html:24
+msgid "primary"
+msgstr "primário"
+
+#: crate_project/templates/account/email.html:32
+msgid "Make primary"
+msgstr "Make primary"
+
+#: crate_project/templates/account/email.html:37
+msgid "unverified"
+msgstr "não verificado"
+
+#: crate_project/templates/account/email.html:44
+msgid "Re-send verification email"
+msgstr "Re-enviar e-mail de verificação"
+
+#: crate_project/templates/account/email.html:55
+msgid "Remove"
+msgstr "Remover"
+
+#: crate_project/templates/account/email.html:63
+msgid ""
+"You should really add an email address so you can receive notifications, "
+"reset your password if you forget it, etc."
+msgstr "Você deve realmente adicionar um endereço de e-mail para que possa receber notificações, redefinir sua senha se você esquecê-la, etc."
+
+#: crate_project/templates/account/email.html:69
+msgid "Add Email Address"
+msgstr "Adicionar endereço de e-mail"
+
+#: crate_project/templates/account/email.html:76
+msgid "Add"
+msgstr "Adicionar"
+
+#: crate_project/templates/account/language_change.html:9
+msgid "Language Settings"
+msgstr ""
+
+#: crate_project/templates/account/language_change.html:10
+msgid "This site can be used in your preferred language."
+msgstr "Este site pode ser usado em seu idioma preferido."
+
+#: crate_project/templates/account/language_change.html:19
+msgid "Change my language"
+msgstr "Alterar meu idioma"
+
+#: crate_project/templates/account/login.html:5
+msgid "Log In"
+msgstr "Entrar"
+
+#: crate_project/templates/account/login.html:9
+#: crate_project/templates/account/login.html:40
+#: crate_project/templates/account/login.html:57
+#: crate_project/templates/account/signup.html:18
+#: crate_project/templates/django_openid/login.html:17
+msgid "Log in"
+msgstr "Entrar"
+
+#: crate_project/templates/account/login.html:10
+msgid "If you have an existing account, provide your login credentials below."
+msgstr ""
+
+#: crate_project/templates/account/login.html:19
+#: crate_project/templates/account/password_reset.html:15
+#: crate_project/templates/account/password_reset_done.html:14
+msgid "Note"
+msgstr "Nota"
+
+#: crate_project/templates/account/login.html:19
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr "você já está logado como %(user_display)s."
+
+#: crate_project/templates/account/login.html:24
+#, python-format
+msgid "Don't have an account? <a href=\"%(signup_url)s\">Sign up</a>!"
+msgstr "Não possui uma conta? <a href=\"%(signup_url)s\">Registe-se</a>!"
+
+#: crate_project/templates/account/login.html:25
+msgid "Forgot password?"
+msgstr "Esqueceu a senha?"
+
+#: crate_project/templates/account/login.html:29
+msgid "Log in with an existing account"
+msgstr ""
+
+#: crate_project/templates/account/login.html:46
+#: crate_project/templates/account/signup.html:39
+msgid "Or sign in with your OpenID"
+msgstr "Ou entre com seu OpenID"
+
+#: crate_project/templates/account/login.html:49
+#: crate_project/templates/account/signup.html:44
+#: crate_project/templates/django_openid/associations.html:42
+msgid "OpenID Identifier"
+msgstr "Identificador OpenID"
+
+#: crate_project/templates/account/login.html:63
+#: crate_project/templates/django_openid/login.html:26
+#, python-format
+msgid ""
+"If you have any trouble logging in to your account, contact us at <a "
+"href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+msgstr "Se você tiver dificuldades para acessar sua conta, contate <a href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+
+#: crate_project/templates/account/password_change.html:10
+msgid "Use the form below to change your password."
+msgstr ""
+
+#: crate_project/templates/account/password_change.html:19
+#: crate_project/templates/account/password_reset_from_key.html:29
+msgid "Change password"
+msgstr "Alterar senha"
+
+#: crate_project/templates/account/password_delete.html:8
+msgid ""
+"You may delete your password since you are currently logged in using OpenID."
+msgstr "Você pode apagar a sua senha uma vez que você está conectado com OpenID."
+
+#: crate_project/templates/account/password_delete.html:13
+msgid "Delete my password"
+msgstr "Apagar minha senha"
+
+#: crate_project/templates/account/password_delete_done.html:3
+#: crate_project/templates/account/password_delete_done.html:7
+msgid "Password Deleted"
+msgstr "Senha apagada"
+
+#: crate_project/templates/account/password_delete_done.html:8
+msgid "Your password has been deleted."
+msgstr "Sua senha foi excluída."
+
+#: crate_project/templates/account/password_reset.html:5
+#: crate_project/templates/account/password_reset.html:9
+#: crate_project/templates/account/password_reset_done.html:3
+msgid "Password Reset"
+msgstr "Redefinição de senha"
+
+#: crate_project/templates/account/password_reset.html:10
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll send you "
+"an email allowing you to reset it."
+msgstr "Esqueceu sua senha? Digite seu email abaixo e nós enviaremos um e-mail que lhe permite redefini-la."
+
+#: crate_project/templates/account/password_reset.html:18
+#: crate_project/templates/account/password_reset_done.html:14
+#, python-format
+msgid "You are already logged in as %(user_display)s."
+msgstr ""
+
+#: crate_project/templates/account/password_reset.html:28
+msgid "Reset my password"
+msgstr "Redefinir minha senha"
+
+#: crate_project/templates/account/password_reset.html:32
+#, python-format
+msgid ""
+"If you have any trouble resetting your password, contact us at <a "
+"href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+msgstr "Se você tiver qualquer problema ao redefinir sua senha, entre em contato conosco <a href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+
+#: crate_project/templates/account/password_reset_done.html:7
+msgid "Reset Email Sent"
+msgstr ""
+
+#: crate_project/templates/account/password_reset_done.html:8
+msgid ""
+"An email with information on how to reset your password has been sent to "
+"your email address."
+msgstr ""
+
+#: crate_project/templates/account/password_reset_done.html:18
+#, python-format
+msgid ""
+"If you do not receive your reset email within a few minutes, contact us at "
+"<a href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:10
+msgid "Expired or Invalid Reset"
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:11
+msgid ""
+"The password reset link you followed is invalid or has been used already."
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:15
+#, python-format
+msgid ""
+"The password reset link you follow is invalid, possibly because it has "
+"already been used.  Please request a <a href=\"%(passwd_reset_url)s\">new "
+"password reset</a>."
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:19
+msgid "Changing Password"
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:20
+msgid "Use the form below to set a new password for your account."
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:34
+msgid "Password Updated"
+msgstr ""
+
+#: crate_project/templates/account/password_reset_from_key.html:35
+msgid "Your password has been successfully updated."
+msgstr ""
+
+#: crate_project/templates/account/password_set.html:9
+msgid "Set your password"
+msgstr ""
+
+#: crate_project/templates/account/password_set.html:10
+msgid "Use the form below to set your password."
+msgstr ""
+
+#: crate_project/templates/account/password_set.html:19
+msgid "Set password"
+msgstr "Definir senha"
+
+#: crate_project/templates/account/signup.html:5
+#: crate_project/templates/account/signup.html:9
+msgid "Sign Up"
+msgstr "Registre-se"
+
+#: crate_project/templates/account/signup.html:10
+msgid "To sign up with a new account, use the form below."
+msgstr ""
+
+#: crate_project/templates/account/signup.html:16
+msgid "You are already logged in."
+msgstr "Você já fez o acesso"
+
+#: crate_project/templates/account/signup.html:18
+msgid "Already have an account?"
+msgstr "Já possui uma conta?"
+
+#: crate_project/templates/account/signup.html:34
+#: crate_project/templates/django_openid/register.html:21
+msgid "Sign up"
+msgstr ""
+
+#: crate_project/templates/account/signup.html:51
+msgid "Sign in with OpenID"
+msgstr ""
+
+#: crate_project/templates/account/signup.html:57
+#: crate_project/templates/django_openid/register.html:32
+#, python-format
+msgid ""
+"If you have any trouble creating your account, contact us at <a "
+"href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+msgstr "Se você tiver dificuldades para criar sua conta, contate <a href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+
+#: crate_project/templates/account/timezone_change.html:9
+msgid "Timezone settings"
+msgstr ""
+
+#: crate_project/templates/account/timezone_change.html:10
+msgid ""
+"This site can localize all times into your preferred timezone. Change your "
+"timezone below."
+msgstr "Este site pode localizar seu fuso horário preferido. Mude o seu fuso horário abaixo."
+
+#: crate_project/templates/account/timezone_change.html:19
+msgid "Change my timezone"
+msgstr "Alterar meu fuso horário"
+
+#: crate_project/templates/account/verification_sent.html:3
+#: crate_project/templates/account/verification_sent.html:7
+msgid "Verification email sent"
+msgstr ""
+
+#: crate_project/templates/account/verification_sent.html:9
+#, python-format
+msgid ""
+"We have sent you an email to <b>%(email)s</b> for verification. Follow the "
+"link provided to finalize the signup process."
+msgstr ""
+
+#: crate_project/templates/account/verification_sent.html:13
+#, python-format
+msgid ""
+"If you do not receive it within a few minutes, contact us at <a "
+"href=\"mailto:%(CONTACT_EMAIL)s\">%(CONTACT_EMAIL)s</a>."
+msgstr ""
+
+#: crate_project/templates/account/verification_sent.html:14
+msgid "Go back"
+msgstr "Voltar"
+
+#: crate_project/templates/django_openid/already_logged_in.html:3
+#: crate_project/templates/django_openid/already_logged_in.html:7
+msgid "Already logged in"
+msgstr "Já logado"
+
+#: crate_project/templates/django_openid/already_logged_in.html:8
+#, python-format
+msgid ""
+"You are already logged into the site. To login with a different OpenID "
+"please <a href=\"/openid/logout/?next=%(url_acct_logout)s\">logout</a> "
+"first."
+msgstr "Você já está logado no site. Para entrar com um OpenID diferente clique em <a href=\"/openid/logout/?next=%(url_acct_logout)s\">sair</a> primeiro."
+
+#: crate_project/templates/django_openid/associations.html:8
+msgid "Manage OpenID Associations"
+msgstr "Gerenciar Associações OpenID"
+
+#: crate_project/templates/django_openid/associations.html:11
+#, python-format
+msgid ""
+"You have not set a password for this user account. You are unable to remove "
+"OpenID associations until you <a href=\"%(acct_passwd_set_url)s\">set a "
+"password</a>."
+msgstr "Você não definiu uma senha para esta conta de usuário. Você será incapaz de remover associações OpenID até você <a href=\"%(acct_passwd_set_url)s\">definir a senha</a>."
+
+#: crate_project/templates/django_openid/associations.html:15
+msgid "Your account is currently associated with the following OpenID(s)"
+msgstr ""
+
+#: crate_project/templates/django_openid/associations.html:26
+msgid "remove"
+msgstr "remover"
+
+#: crate_project/templates/django_openid/associations.html:33
+msgid "To associate a new OpenID with this account, sign in with it here:"
+msgstr "Para associar um OpenID com esta nova conta, faça login com ele aqui:"
+
+#: crate_project/templates/django_openid/associations.html:50
+msgid "Authenticate and associate with this account"
+msgstr "Autenticar e associar esta conta"
+
+#: crate_project/templates/django_openid/error.html:3
+#: crate_project/templates/django_openid/error.html:6
+msgid "Error using OpenID"
+msgstr "Erro usando OpenID"
+
+#: crate_project/templates/django_openid/login.html:5
+msgid "Login"
+msgstr "Entrar"
+
+#: crate_project/templates/django_openid/login.html:8
+msgid "Log In to OpenID"
+msgstr "Efetue login para OpenID"
+
+#: crate_project/templates/django_openid/register.html:3
+#: crate_project/templates/django_openid/register.html:6
+msgid "Choose a Username"
+msgstr "Escolha um nome de usuário"
+
+#: crate_project/templates/django_openid/register.html:9
+msgid "Please correct the errors below:"
+msgstr "Por favor, corrija os erros abaixo:"
+
+#: crate_project/templates/django_openid/register.html:12
+msgid ""
+"Now that you have logged in with your OpenID, we need you to choose a "
+"username for this site."
+msgstr "Agora que você já logado com sua OpenID, precisamos que você para escolha um nome de usuário para este site."
+
+#: crate_project/templates/django_openid/register.html:30
+#, python-format
+msgid ""
+"<strong>Already have an account?</strong> <a "
+"href=\"%(acct_login_openid_url)s\">Log in</a> to associate your OpenID with "
+"your existing account."
+msgstr "<strong>Já possui uma conta?</strong><a href=\"%(acct_login_openid_url)s\">entre</a> para associar o seu OpenID à sua conta existente."
+
+#: crate_project/templates/django_openid/register.html:31
+#, python-format
+msgid ""
+"By clicking &quot;Sign Up&quot;, you are indicating that you have read and "
+"agree to the <a href=\"%(terms_url)s\">Terms of Use</a> and <a "
+"href=\"%(privacy_url)s\">Privacy Policy</a>."
+msgstr "Ao clicar em \"Entrar\", você indica que leu e concorda com os <a href=\"%(terms_url)s\">Termos de Uso</a> e <a href=\"%(privacy_url)s\">Política de Privacidade</a>."
+
+#: crate_project/templates/django_openid/registration_closed.html:3
+#: crate_project/templates/django_openid/registration_closed.html:6
+msgid "Signup closed"
+msgstr "Entrada fechada"
+
+#: crate_project/templates/django_openid/registration_closed.html:8
+msgid ""
+"Whoops, you can't register for an account now. This site is currently closed"
+" for sign-up."
+msgstr "Opa, você não pode se inscrever para uma conta agora. Este site está fechado para inscrever-se."
+
+#: crate_project/templates/emailconfirmation/confirm_email.html:3
+msgid "Email Confirmation"
+msgstr ""
+
+#: crate_project/templates/emailconfirmation/confirm_email.html:10
+msgid "Email Confirmed"
+msgstr "Email confimado"
+
+#: crate_project/templates/emailconfirmation/confirm_email.html:11
+#, python-format
+msgid ""
+"You have confirmed that %(email)s is an email address for user "
+"'%(user_display)s'."
+msgstr "Você confirmou que %(email)s é um endereço de e-mail para o usuário '%(user_display)s'."
+
+#: crate_project/templates/emailconfirmation/confirm_email.html:15
+msgid "Invalid confirmation key"
+msgstr ""
+
+#: crate_project/templates/emailconfirmation/confirm_email.html:16
+msgid "The confirmation key you provided is invalid."
+msgstr ""
+
+#: crate_project/templates/favorites/favorite_list.html:19
 msgid "You have no Favorites"
 msgstr "Você não tem Favoritos"
 
-#: crate_project/templates/favorites/widget.html:7
+#: crate_project/templates/favorites/widget.html:4
 msgid "Favorite this package"
 msgstr "Marque este pacote como favorito"
 
-#: crate_project/templates/favorites/widget.html:15
+#: crate_project/templates/favorites/widget.html:12
 msgid "Log in to Favorite this package"
 msgstr "Faça o log in para marcar este pacote como favorito"
 
-#: crate_project/templates/packages/release_detail.html:37
-msgid ""
-"This package has been deleted, but it is still available for download for "
-"other packages or projects that may have depended on it."
-msgstr "Este pacote foi deletado, mas ainda se encontra disponível para baixar por outros pacotes ou projetos que venham a depender dele."
-
-#: crate_project/templates/packages/release_detail.html:47
+#: crate_project/templates/packages/release_detail.html:32
 msgid "Install"
 msgstr "Instalar"
 
-#: crate_project/templates/packages/release_detail.html:59
+#: crate_project/templates/packages/release_detail.html:39
 msgid "Description"
 msgstr "Descrição"
 
-#: crate_project/templates/packages/release_detail.html:60
+#: crate_project/templates/packages/release_detail.html:40
 msgid "Changelog"
 msgstr "Log de Mudanças"
 
-#: crate_project/templates/packages/release_detail.html:61
+#: crate_project/templates/packages/release_detail.html:41
 msgid "License"
 msgstr "Licença"
 
-#: crate_project/templates/packages/release_detail.html:62
-#: crate_project/templates/packages/release_detail.html:261
+#: crate_project/templates/packages/release_detail.html:42
+#: crate_project/templates/packages/partials/history.html:19
 msgid "Info"
 msgstr "Informação"
 
-#: crate_project/templates/packages/release_detail.html:63
+#: crate_project/templates/packages/release_detail.html:43
 msgid "Files"
 msgstr "Arquivos"
 
-#: crate_project/templates/packages/release_detail.html:64
+#: crate_project/templates/packages/release_detail.html:44
 #, python-format
 msgid "All Versions (%(version_count)s)"
 msgstr "Todas as Versões (%(version_count)s)"
 
-#: crate_project/templates/packages/release_detail.html:65
-msgid "History"
-msgstr "Histórico"
-
-#: crate_project/templates/packages/release_detail.html:77
+#: crate_project/templates/packages/partials/description.html:8
 msgid "No Description Provided."
 msgstr "Nenhuma descrição fornecida."
 
-#: crate_project/templates/packages/release_detail.html:84
-msgid "Author"
-msgstr "Autor"
-
-#: crate_project/templates/packages/release_detail.html:91
-msgid "Links"
-msgstr "Links"
-
-#: crate_project/templates/packages/release_detail.html:107
-msgid "Classifiers"
-msgstr "Classificadores"
-
-#: crate_project/templates/packages/release_detail.html:119
-msgid "Requirements"
-msgstr "Requerimentos"
-
-#: crate_project/templates/packages/release_detail.html:132
-msgid "Provides"
-msgstr "Fornece"
-
-#: crate_project/templates/packages/release_detail.html:145
-msgid "Obsoletes"
-msgstr "Obsoletos"
-
-#: crate_project/templates/packages/release_detail.html:174
+#: crate_project/templates/packages/partials/files.html:4
 msgid "File"
 msgstr "Arquivo"
 
-#: crate_project/templates/packages/release_detail.html:175
+#: crate_project/templates/packages/partials/files.html:5
 msgid "Type"
 msgstr "Tipo"
 
-#: crate_project/templates/packages/release_detail.html:176
+#: crate_project/templates/packages/partials/files.html:6
 msgid "Python Version"
 msgstr "Versão de Python"
 
-#: crate_project/templates/packages/release_detail.html:177
+#: crate_project/templates/packages/partials/files.html:7
 msgid "Uploaded On"
 msgstr "Enviado em"
 
-#: crate_project/templates/packages/release_detail.html:178
+#: crate_project/templates/packages/partials/files.html:8
 msgid "Size"
 msgstr "Tamanho"
 
-#: crate_project/templates/packages/release_detail.html:179
-#: crate_project/templates/packages/release_detail.html:302
+#: crate_project/templates/packages/partials/files.html:9
+#: crate_project/templates/packages/partials/sidebar.html:1
 msgid "Downloads"
 msgstr "Baixado"
 
-#: crate_project/templates/packages/release_detail.html:195
+#: crate_project/templates/packages/partials/files.html:25
 #, python-format
 msgid ""
 "There are No Files for This Package's Release, but try the <a "
 "href=\"%(uri)s\">author's downloads</a> for this release."
 msgstr "Não existem arquivos para esta versão do pacote, mas tente <a href=\"%(uri)s\">Downloads do Autor</a> para esta versão."
 
-#: crate_project/templates/packages/release_detail.html:197
+#: crate_project/templates/packages/partials/files.html:27
 msgid "There are No Files for This Package's Release."
 msgstr "Não existem arquivos para esta versão do pacote."
 
-#: crate_project/templates/packages/release_detail.html:227
-#: crate_project/templates/packages/release_detail.html:250
-msgid "Version"
-msgstr "Versão"
-
-#: crate_project/templates/packages/release_detail.html:228
-msgid "Release Date"
-msgstr "Data de lançamento"
-
-#: crate_project/templates/packages/release_detail.html:248
+#: crate_project/templates/packages/partials/history.html:4
 msgid "Date"
 msgstr "Data"
 
-#: crate_project/templates/packages/release_detail.html:249
+#: crate_project/templates/packages/partials/history.html:5
 msgid "Package"
 msgstr "Pacote"
 
-#: crate_project/templates/packages/release_detail.html:251
+#: crate_project/templates/packages/partials/history.html:6
+#: crate_project/templates/packages/partials/versions.html:4
+msgid "Version"
+msgstr "Versão"
+
+#: crate_project/templates/packages/partials/history.html:7
 msgid "Action"
 msgstr "Ação"
 
-#: crate_project/templates/packages/release_detail.html:265
+#: crate_project/templates/packages/partials/history.html:23
 msgid "This Package is older than the start of History Tracking."
 msgstr "Este pacote é mais velho do que o início do rastreamento do histórico."
 
-#: crate_project/templates/packages/release_detail.html:284
+#: crate_project/templates/packages/partials/history.html:43
 msgid "Download URI"
 msgstr "Baixar por URI"
 
-#: crate_project/templates/packages/release_detail.html:304
+#: crate_project/templates/packages/partials/meta.html:3
+msgid "Author"
+msgstr "Autor"
+
+#: crate_project/templates/packages/partials/meta.html:11
+msgid "Links"
+msgstr "Links"
+
+#: crate_project/templates/packages/partials/meta.html:29
+msgid "Classifiers"
+msgstr "Classificadores"
+
+#: crate_project/templates/packages/partials/meta.html:42
+msgid "Requirements"
+msgstr "Requerimentos"
+
+#: crate_project/templates/packages/partials/meta.html:54
+msgid "Provides"
+msgstr "Fornece"
+
+#: crate_project/templates/packages/partials/meta.html:66
+msgid "Obsoletes"
+msgstr "Obsoletos"
+
+#: crate_project/templates/packages/partials/sidebar.html:4
 #, python-format
 msgid "<span class=\"count\">%(count)s</span> total downloads"
 msgstr "<span class=\"count\">%(count)s</span> baixado"
 
-#. Translators: This is used to display how many downloads a package has
-#. gotten, e.g. 12 for this version.
-#: crate_project/templates/packages/release_detail.html:306
+#: crate_project/templates/packages/partials/sidebar.html:5
 #, python-format
 msgid "<span class=\"count\">%(count)s</span> for this version"
 msgstr "<span class=\"count\">%(count)s</span> para esta versão"
 
-#: crate_project/templates/packages/release_detail.html:309
+#: crate_project/templates/packages/partials/sidebar.html:14
 msgid "Evaluation"
 msgstr "Avaliação"
 
-#: crate_project/templates/packages/release_detail.html:309
+#: crate_project/templates/packages/partials/sidebar.html:14
 msgid "mouse over for details"
 msgstr "ponteiro acima para detalhes"
 
-#: crate_project/templates/packages/release_detail.html:314
+#: crate_project/templates/packages/partials/sidebar.html:36
 msgid "Latest Versions"
 msgstr "Últimas versões"
 
-#: crate_project/templates/profiles/_profile_info.html:3
-msgid "Name"
-msgstr "Nome"
+#: crate_project/templates/packages/partials/versions.html:5
+msgid "Release Date"
+msgstr "Data de lançamento"
 
-#: crate_project/templates/profiles/_profile_info.html:4
-msgid "About"
-msgstr "Sobre"
+#: crate_project/templates/packages/partials/yanked.html:4
+msgid ""
+"This package has been deleted, but it is still available for download for "
+"other packages or projects that may have depended on it."
+msgstr "Este pacote foi deletado, mas ainda se encontra disponível para baixar por outros pacotes ou projetos que venham a depender dele."
 
-#: crate_project/templates/profiles/_profile_info.html:5
-msgid "Location"
-msgstr "Localização"
-
-#: crate_project/templates/profiles/_profile_info.html:6
-msgid "Website"
-msgstr "Website"
-
-#: crate_project/templates/search/results.html:55
+#: crate_project/templates/search/results.html:20
 msgid "Refine Results"
 msgstr "Refinar Resultados"
 
-#: crate_project/templates/search/results.html:59
+#: crate_project/templates/search/results.html:27
 msgid "By Python Version"
 msgstr "Por versão do Python"
 
-#: crate_project/templates/search/results.html:74
+#: crate_project/templates/search/results.html:29
 msgid "By Operating System"
 msgstr "Por Sistema Operacional"
 
-#: crate_project/templates/search/results.html:89
+#: crate_project/templates/search/results.html:31
 msgid "By License"
 msgstr "Por Licença"
 
-#: crate_project/templates/search/results.html:104
+#: crate_project/templates/search/results.html:33
 msgid "By Implementation"
 msgstr "Por Implementação"
 
-#: crate_project/templates/search/results.html:128
+#: crate_project/templates/search/results.html:35
+msgid "By Other"
+msgstr ""
+
+#: crate_project/templates/search/results.html:60
 msgid "No results found."
 msgstr "Nenhum resultado encontrado."
 
-#: crate_project/templates/search/results.html:135
+#: crate_project/templates/search/results.html:67
 msgid "Previous"
 msgstr "Anterior"
 
-#: crate_project/templates/search/results.html:141
+#: crate_project/templates/search/results.html:73
 msgid "Next"
 msgstr "Próximo"
 
-#: crate_project/templates/search/search.html:22
-msgid ""
-"Crate.io is a Python Package Index with a heavy focus on making it easy to "
-"find the packages you want, and reliably hosting them for easy installation."
-msgstr "Crate.io é um Índice de Pacotes Python com foco em facilitar a localização de pacotes que você deseja e ser uma hospedagem segura para simplificar a instalação."
-
-#: crate_project/templates/search/search.html:45
+#: crate_project/templates/search/partials/package.html:5
+#: crate_project/templates/search/partials/package.html:7
 #, python-format
-msgid ""
-"<span class=\"downloads\">%(count)s downloads</span> of %(total)s packages "
-"since %(since)s"
-msgstr "<span class=\"downloads\">%(count)s downloads</span> de %(total)s pacotes desde %(since)s"
+msgid "by %(name)s"
+msgstr ""
 
-#: crate_project/templates/search/search.html:50
-msgid "New Packages"
-msgstr "Novos Pacotes"
-
-#: crate_project/templates/search/search.html:55
-msgid "Just Updated"
-msgstr "Recém Atualizado"
-
-#: crate_project/templates/search/partials/package.html:9
-#: crate_project/templates/search/partials/package.html:11
-#, python-format
-msgid "by %(author)s"
-msgstr "por %(author)s"
-
-#: crate_project/templates/search/partials/package.html:17
+#: crate_project/templates/search/partials/package.html:14
 #, python-format
 msgid "<span class=\"count\">%(downloads)s</span> downloads"
 msgstr "<span class=\"count\">%(downloads)s</span> baixados"
+
+#~ msgid "Crate is a better Python package index."
+#~ msgstr ""
+
+#~ msgid "Why Crate?"
+#~ msgstr ""
