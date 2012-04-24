@@ -447,16 +447,32 @@ class ReleaseObsolete(models.Model):
 
 
 class DownloadDelta(models.Model):
-
-    file = models.ForeignKey(ReleaseFile, related_name="download_deltas")
-    date = models.DateField(default=datetime.date.today, db_index=True)
+    date = models.DateField(db_index=True)
+    file = models.ForeignKey("packages.ReleaseFile", null=True, on_delete=models.SET_NULL)
+    user_agent = models.TextField()
     delta = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Download Delta"
-        verbose_name_plural = "Download Deltas"
+    # Denormalized Data
+    package = models.ForeignKey("packages.Package", null=True, on_delete=models.SET_NULL)
+    release = models.ForeignKey("packages.Release", null=True, on_delete=models.SET_NULL)
 
-        unique_together = ("file", "date")
+    package_name = models.SlugField(max_length=150, help_text="Denormalized Data")
+    release_version = models.CharField(max_length=150, help_text="Denormalized Data")
+    filename = models.CharField(max_length=200, help_text="Denormalized Data")
+
+    class Meta:
+        unique_together = ("date", "file", "user_agent")
+
+    def save(self, *args, **kwargs):
+        if self.file is not None:
+            self.package = self.file.release.package
+            self.release = self.file.release
+
+            self.package_name = self.file.release.package.name
+            self.release_version = self.file.release.version
+            self.filename = self.file.filename
+
+        return super(DownloadDelta, self).save(*args, **kwargs)
 
 
 class ChangeLog(models.Model):

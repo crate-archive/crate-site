@@ -63,9 +63,9 @@ class ReleaseFileAdmin(admin.ModelAdmin):
 
 
 class DownloadDeltaAdmin(admin.ModelAdmin):
-    list_display = ["file", "date", "delta"]
+    list_display = ["file", "date", "user_agent", "delta"]
     list_filter = ["date"]
-    search_fields = ["file__release__package__name", "file__filename"]
+    search_fields = ["file__release__package__name", "file__filename", "user_agent"]
     raw_id_fields = ["file"]
 
 
