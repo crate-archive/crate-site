@@ -1,12 +1,16 @@
+import bz2
 import collections
+import csv
 import datetime
 import hashlib
 import logging
 import re
 import socket
+import StringIO
 import time
 import xmlrpclib
 
+import lxml.html
 import redis
 import requests
 
@@ -18,7 +22,7 @@ from django.utils.timezone import now
 
 from crate.utils.lock import Lock
 from packages.models import Package, ReleaseFile, TroveClassifier, DownloadDelta
-from pypi.models import PyPIIndexPage, PyPIDownloadChange
+from pypi.models import PyPIIndexPage, PyPIDownloadChange, URLLastModified
 from pypi.processor import PyPIPackage
 
 logger = logging.getLogger(__name__)
@@ -180,6 +184,85 @@ def update_download_counts(package_name, version, files, index=None):
                             PyPIDownloadChange.objects.create(file=releasefile, change=change)
     except socket.error:
         logger.exception("[DOWNLOAD SYNC] Network Error")
+
+
+@task
+def process_downloads():
+    BASE_URL = "http://pypi.python.org/stats/days/"
+
+    release_files = None
+
+    session = requests.session()
+
+    response = session.get(BASE_URL)
+    response.raise_for_status()
+
+    html = lxml.html.fromstring(response.text)
+    html.make_links_absolute(BASE_URL)
+
+    for link in html.xpath("//a/@href"):
+        if not link.endswith(".bz2"):
+            continue
+
+        base, name = link.rsplit("/", 1)
+
+        assert base.lower() == BASE_URL[:-1]
+
+        date_string, _ = name.rsplit(".", 1)
+        file_date = datetime.datetime.strptime(date_string, "%Y-%m-%d")
+
+        print file_date
+
+        try:
+            umodified = URLLastModified.objects.get(url=link)
+        except URLLastModified.DoesNotExist:
+            headers = None
+        else:
+            headers = {
+                "If-Modified-Since": umodified.last_modified,
+            }
+
+        # @@@ Check if Modified Since
+        response = session.get(link, headers=headers, prefetch=True)
+
+        if response.status_code == 304:
+            # Skip this file as it hasn't changed
+            print "SKIPPING"
+            continue
+        else:
+            print "PROCESSING"
+
+        response.raise_for_status()
+
+        f = StringIO.StringIO(bz2.decompress(response.content))
+
+        for line in csv.DictReader(f,  fieldnames=["package", "filename", "user_agent", "count"]):
+            if release_files is None:
+                release_files = dict(
+                    [((x.release.package.name, x.filename), x) for x in ReleaseFile.objects.all().only(
+                        "file", "filename", "release__package__name").select_related("release", "release__package")]
+                )
+
+            rf = release_files.get((line["package"], line["filename"]), None)
+
+            if rf is None:
+                # @@@ Store Historical Data
+                continue
+
+            delta, c = DownloadDelta.objects.get_or_create(
+                            date=file_date,
+                            file=rf,
+                            user_agent=line.get("user_agent", ""),
+                            defaults={"delta": int(line.get("count", 0))}
+                        )
+
+            if not c and delta.delta != line.get("count", 0):
+                DownloadDelta.objects.filter(pk=delta.pk).update(delta=int(line.get("count", 0)))
+
+        umodified, c = URLLastModified.objects.get_or_create(url=link, defaults={"last_modified": response.headers.get("Last-Modified")})
+
+        if not c and umodified.last_modified != response.headers.get("Last-Modified"):
+            URLLastModified.objects.filter(pk=umodified.pk).update(last_modified=response.headers.get("Last-Modified"))
 
 
 @task

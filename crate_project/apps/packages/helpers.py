@@ -3,6 +3,7 @@ from django.db.models import Sum
 from jingo import register
 from packages.models import Package, ReleaseFile
 
+
 @register.function
 def package_information():
     return {

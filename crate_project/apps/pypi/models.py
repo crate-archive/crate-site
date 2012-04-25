@@ -47,6 +47,11 @@ class PyPIIndexPage(models.Model):
         return "PyPI Index Page: %s" % self.created.isoformat()
 
 
+class URLLastModified(models.Model):
+    url = models.CharField(max_length=512, unique=True)
+    last_modified = models.CharField(max_length=125)
+
+
 class PyPIDownloadChange(TimeStampedModel):
 
     file = models.ForeignKey("packages.ReleaseFile")
