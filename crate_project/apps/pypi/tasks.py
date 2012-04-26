@@ -200,7 +200,7 @@ def process_downloads():
     html = lxml.html.fromstring(response.text)
     html.make_links_absolute(BASE_URL)
 
-    for link in html.xpath("//a/@href"):
+    for link in reversed(html.xpath("//a/@href")):
         if not link.endswith(".bz2"):
             continue
 
@@ -222,7 +222,6 @@ def process_downloads():
                 "If-Modified-Since": umodified.last_modified,
             }
 
-        # @@@ Check if Modified Since
         response = session.get(link, headers=headers, prefetch=True)
 
         if response.status_code == 304:
