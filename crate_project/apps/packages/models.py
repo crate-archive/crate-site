@@ -449,7 +449,7 @@ class ReleaseObsolete(models.Model):
 class DownloadDelta(models.Model):
     date = models.DateField(db_index=True)
     file = models.ForeignKey("packages.ReleaseFile", null=True, on_delete=models.SET_NULL)
-    user_agent = models.TextField(db_index=True)
+    tx_user_agent = models.TextField(db_index=True)
     delta = models.IntegerField(default=0)
 
     # Denormalized Data
