@@ -446,13 +446,16 @@ class ReleaseObsolete(models.Model):
         return self.name
 
 
+class UserAgent(models.Model):
+    user_agent = models.TextField(db_index=True)
+
+
 class DownloadDelta(models.Model):
     date = models.DateField(db_index=True)
-    file = models.ForeignKey("packages.ReleaseFile", null=True, on_delete=models.SET_NULL)
-    tx_user_agent = models.TextField(db_index=True)
+    user_agent = models.ForeignKey(UserAgent, null=True)
     delta = models.IntegerField(default=0)
 
-    # Denormalized Data
+    file = models.ForeignKey("packages.ReleaseFile", null=True, on_delete=models.SET_NULL)
     package = models.ForeignKey("packages.Package", null=True, on_delete=models.SET_NULL)
     release = models.ForeignKey("packages.Release", null=True, on_delete=models.SET_NULL)
 

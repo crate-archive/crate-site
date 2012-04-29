@@ -8,53 +8,41 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'DownloadDelta.package'
-        db.add_column('packages_downloaddelta', 'package',
-                      self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.Package'], null=True, on_delete=models.SET_NULL),
-                      keep_default=False)
+        # Adding model 'UserAgent'
+        db.create_table('packages_useragent', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('user_agent', self.gf('django.db.models.fields.TextField')(db_index=True)),
+        ))
+        db.send_create_signal('packages', ['UserAgent'])
 
-        # Adding field 'DownloadDelta.release'
-        db.add_column('packages_downloaddelta', 'release',
-                      self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.Release'], null=True, on_delete=models.SET_NULL),
-                      keep_default=False)
+        # Adding model 'DownloadDelta'
+        db.create_table('packages_downloaddelta', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('date', self.gf('django.db.models.fields.DateField')(db_index=True)),
+            ('user_agent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.UserAgent'], null=True)),
+            ('delta', self.gf('django.db.models.fields.IntegerField')(default=0)),
+            ('file', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.ReleaseFile'], null=True, on_delete=models.SET_NULL)),
+            ('package', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.Package'], null=True, on_delete=models.SET_NULL)),
+            ('release', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.Release'], null=True, on_delete=models.SET_NULL)),
+            ('package_name', self.gf('django.db.models.fields.SlugField')(max_length=150)),
+            ('release_version', self.gf('django.db.models.fields.CharField')(max_length=150)),
+            ('filename', self.gf('django.db.models.fields.CharField')(max_length=200)),
+        ))
+        db.send_create_signal('packages', ['DownloadDelta'])
 
-        # Adding field 'DownloadDelta.package_name'
-        db.add_column('packages_downloaddelta', 'package_name',
-                      self.gf('django.db.models.fields.SlugField')(default='', max_length=150),
-                      keep_default=False)
+        # Adding unique constraint on 'DownloadDelta', fields ['date', 'file', 'user_agent']
+        db.create_unique('packages_downloaddelta', ['date', 'file_id', 'user_agent_id'])
 
-        # Adding field 'DownloadDelta.release_version'
-        db.add_column('packages_downloaddelta', 'release_version',
-                      self.gf('django.db.models.fields.CharField')(default='', max_length=150),
-                      keep_default=False)
-
-        # Adding field 'DownloadDelta.filename'
-        db.add_column('packages_downloaddelta', 'filename',
-                      self.gf('django.db.models.fields.CharField')(default='', max_length=200),
-                      keep_default=False)
-
-
-        # Changing field 'DownloadDelta.file'
-        db.alter_column('packages_downloaddelta', 'file_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['packages.ReleaseFile'], null=True, on_delete=models.SET_NULL))
     def backwards(self, orm):
-        # Deleting field 'DownloadDelta.package'
-        db.delete_column('packages_downloaddelta', 'package_id')
+        # Removing unique constraint on 'DownloadDelta', fields ['date', 'file', 'user_agent']
+        db.delete_unique('packages_downloaddelta', ['date', 'file_id', 'user_agent_id'])
 
-        # Deleting field 'DownloadDelta.release'
-        db.delete_column('packages_downloaddelta', 'release_id')
+        # Deleting model 'UserAgent'
+        db.delete_table('packages_useragent')
 
-        # Deleting field 'DownloadDelta.package_name'
-        db.delete_column('packages_downloaddelta', 'package_name')
+        # Deleting model 'DownloadDelta'
+        db.delete_table('packages_downloaddelta')
 
-        # Deleting field 'DownloadDelta.release_version'
-        db.delete_column('packages_downloaddelta', 'release_version')
-
-        # Deleting field 'DownloadDelta.filename'
-        db.delete_column('packages_downloaddelta', 'filename')
-
-
-        # User chose to not deal with backwards NULL issues for 'DownloadDelta.file'
-        raise RuntimeError("Cannot reverse this migration. 'DownloadDelta.file' and its values cannot be restored.")
     models = {
         'packages.changelog': {
             'Meta': {'object_name': 'ChangeLog'},
@@ -76,7 +64,7 @@ class Migration(SchemaMigration):
             'package_name': ('django.db.models.fields.SlugField', [], {'max_length': '150'}),
             'release': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['packages.Release']", 'null': 'True', 'on_delete': 'models.SET_NULL'}),
             'release_version': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
-            'user_agent': ('django.db.models.fields.TextField', [], {})
+            'user_agent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['packages.UserAgent']", 'null': 'True'})
         },
         'packages.package': {
             'Meta': {'object_name': 'Package'},
@@ -176,6 +164,11 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'TroveClassifier'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'trove': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '350'})
+        },
+        'packages.useragent': {
+            'Meta': {'object_name': 'UserAgent'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'user_agent': ('django.db.models.fields.TextField', [], {'db_index': 'True'})
         }
     }
 
