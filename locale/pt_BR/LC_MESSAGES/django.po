@@ -6,12 +6,13 @@
 #   <cifali.filipe@gmail.com>, 2012.
 # Donald Stufft <donald.stufft@gmail.com>, 2012.
 # Henrique Bastos <henrique@bastos.net>, 2012.
+# William Ferreira <williamgeraldo@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Crate.io\n"
 "Report-Msgid-Bugs-To: support@crate.io\n"
-"POT-Creation-Date: 2012-04-23 09:49-0400\n"
-"PO-Revision-Date: 2012-04-23 14:34+0000\n"
+"POT-Creation-Date: 2012-05-02 17:04-0400\n"
+"PO-Revision-Date: 2012-05-02 21:05+0000\n"
 "Last-Translator: Donald Stufft <donald.stufft@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.net/projects/p/crateio/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: crate_project/apps/history/models.py:16
 msgid "Package Created"
-msgstr ""
+msgstr "Pacote criado"
 
 #: crate_project/apps/history/models.py:17
 #: crate_project/templates/packages/partials/yanked.html:3
@@ -40,15 +41,49 @@ msgstr ""
 
 #: crate_project/apps/history/models.py:20
 msgid "File Added"
-msgstr ""
+msgstr "Arquivo adicionado"
 
 #: crate_project/apps/history/models.py:21
 msgid "File Removed"
+msgstr "Arquivo removido"
+
+#: crate_project/apps/lists/models.py:12
+msgid "Name"
+msgstr "Nome"
+
+#: crate_project/apps/lists/models.py:17
+msgid "Private List"
+msgstr ""
+
+#: crate_project/apps/lists/models.py:17
+msgid "Private lists are visible only to you."
+msgstr ""
+
+#: crate_project/apps/lists/models.py:19
+msgid "Packages"
+msgstr ""
+
+#: crate_project/apps/lists/views.py:34 crate_project/apps/lists/views.py:80
+#, python-format
+msgid "Successfully added %(package)s to %(list)s."
+msgstr ""
+
+#: crate_project/apps/lists/views.py:48 crate_project/apps/lists/views.py:124
+msgid "Package does not exist"
+msgstr ""
+
+#: crate_project/apps/lists/views.py:58 crate_project/apps/lists/views.py:126
+msgid "List does not exist"
+msgstr ""
+
+#: crate_project/apps/lists/views.py:113
+#, python-format
+msgid "Successfully removed %(package)s from %(list)s."
 msgstr ""
 
 #: crate_project/apps/packages/evaluators.py:25
 msgid "PEP386 Compatibility"
-msgstr ""
+msgstr "Compatibilidade com PEP386"
 
 #: crate_project/apps/packages/evaluators.py:26
 msgid ""
@@ -63,19 +98,19 @@ msgstr ""
 msgid ""
 "Compatible with <a "
 "href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
-msgstr ""
+msgstr "Compatível com <a href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
 
 #: crate_project/apps/packages/evaluators.py:43
 msgid ""
 "Almost Compatible with <a "
 "href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
-msgstr ""
+msgstr "Quase compatível com <a href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
 
 #: crate_project/apps/packages/evaluators.py:49
 msgid ""
 "Incompatible with <a "
 "href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
-msgstr ""
+msgstr "Incompatível com <a href=\"http://www.python.org/dev/peps/pep-0386/\">PEP386</a>."
 
 #: crate_project/apps/packages/evaluators.py:57
 msgid "Package Hosting"
@@ -106,7 +141,7 @@ msgstr ""
 
 #: crate_project/apps/packages/evaluators.py:94
 msgid "Documentation hosted on Read The Docs"
-msgstr ""
+msgstr "Documentação hospedado em Read The Docs"
 
 #: crate_project/apps/packages/evaluators.py:96
 msgid ""
@@ -131,21 +166,21 @@ msgstr ""
 #: crate_project/apps/packages/evaluators.py:143
 #, python-format
 msgid "Available on <a href=\"%s\">Read The Docs</a>"
-msgstr ""
+msgstr "Disponível em <a href=\"%s\">Read The Docs</a>"
 
 #: crate_project/apps/packages/evaluators.py:149
 msgid "Unavailable on <a href=\"http://readthedocs.org/\">Read The Docs</a>"
-msgstr ""
+msgstr "Indisponível em <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 
-#: crate_project/apps/packages/models.py:343
+#: crate_project/apps/packages/models.py:344
 msgid "Source"
-msgstr ""
+msgstr "Fonte"
 
-#: crate_project/apps/packages/models.py:348
+#: crate_project/apps/packages/models.py:349
 msgid "Dumb Binary Distribution"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:349
+#: crate_project/apps/packages/models.py:350
 msgid "Windows Installer Binary Distribution"
 msgstr ""
 
@@ -174,7 +209,7 @@ msgstr "Tem versões"
 
 #: crate_project/apps/search/forms.py:17
 #: crate_project/templates/homepage.html:28
-#: crate_project/templates/site_base.html:19
+#: crate_project/templates/site_base.html:22
 msgid "Search"
 msgstr "Busca"
 
@@ -193,7 +228,7 @@ msgstr "Não encontrado"
 
 #: crate_project/templates/404.html:7
 msgid "Page not found"
-msgstr ""
+msgstr "Página não encontrada"
 
 #: crate_project/templates/404.html:8
 msgid "We're sorry but that page could not be found."
@@ -205,7 +240,7 @@ msgstr "Erro no servidor"
 
 #: crate_project/templates/500.html:7
 msgid "Something went wrong"
-msgstr ""
+msgstr "Algo deu errado"
 
 #: crate_project/templates/500.html:8
 msgid ""
@@ -238,6 +273,24 @@ msgid ""
 "          "
 msgstr ""
 
+#: crate_project/templates/_footer.html:11
+msgid "Hosted by"
+msgstr ""
+
+#: crate_project/templates/_footer.html:13
+#: crate_project/templates/_footer.html:14
+msgid "Hosted by Gondor"
+msgstr ""
+
+#: crate_project/templates/_footer.html:20
+msgid "Resolved by"
+msgstr ""
+
+#: crate_project/templates/_footer.html:22
+#: crate_project/templates/_footer.html:23
+msgid "Resolved by Dyn"
+msgstr ""
+
 #: crate_project/templates/homepage.html:3
 msgid "Welcome"
 msgstr "Bem-vindo"
@@ -249,22 +302,20 @@ msgstr ""
 #: crate_project/templates/homepage.html:51
 #, python-format
 msgid "%(number)s <span class=\"info-label\">packages</span>"
-msgstr ""
+msgstr "%(number)s <span class=\"info-label\">pacotes</span>"
 
 #: crate_project/templates/homepage.html:58
 #, python-format
 msgid "%(number)s <span class=\"info-label\">downloads</span>"
-msgstr ""
+msgstr "%(number)s <span class=\"info-label\">downloads</span>"
 
-#: crate_project/templates/site_base.html:8
+#: crate_project/templates/site_base.html:11
 msgid "Beta"
 msgstr "Beta"
 
-#: crate_project/templates/site_base.html:14
-#: crate_project/templates/favorites/favorite_list.html:3
-#: crate_project/templates/favorites/favorite_list.html:7
-msgid "My Favorites"
-msgstr "Meus Favoritos"
+#: crate_project/templates/site_base.html:17
+msgid "My Lists"
+msgstr ""
 
 #: crate_project/templates/account/_terms.html:4
 #, python-format
@@ -314,7 +365,7 @@ msgstr "Fuso horário"
 
 #: crate_project/templates/account/email.html:10
 msgid "Manage your email addresses."
-msgstr ""
+msgstr "Gerenciar seus endereços de e-mail."
 
 #: crate_project/templates/account/email.html:21
 msgid "verified"
@@ -356,7 +407,7 @@ msgstr "Adicionar"
 
 #: crate_project/templates/account/language_change.html:9
 msgid "Language Settings"
-msgstr ""
+msgstr "Configurações de Idioma"
 
 #: crate_project/templates/account/language_change.html:10
 msgid "This site can be used in your preferred language."
@@ -372,7 +423,7 @@ msgstr "Entrar"
 
 #: crate_project/templates/account/login.html:9
 #: crate_project/templates/account/login.html:40
-#: crate_project/templates/account/login.html:57
+#: crate_project/templates/account/login.html:60
 #: crate_project/templates/account/signup.html:18
 #: crate_project/templates/django_openid/login.html:17
 msgid "Log in"
@@ -406,18 +457,18 @@ msgstr "Esqueceu a senha?"
 msgid "Log in with an existing account"
 msgstr ""
 
-#: crate_project/templates/account/login.html:46
+#: crate_project/templates/account/login.html:49
 #: crate_project/templates/account/signup.html:39
 msgid "Or sign in with your OpenID"
 msgstr "Ou entre com seu OpenID"
 
-#: crate_project/templates/account/login.html:49
+#: crate_project/templates/account/login.html:52
 #: crate_project/templates/account/signup.html:44
 #: crate_project/templates/django_openid/associations.html:42
 msgid "OpenID Identifier"
 msgstr "Identificador OpenID"
 
-#: crate_project/templates/account/login.html:63
+#: crate_project/templates/account/login.html:66
 #: crate_project/templates/django_openid/login.html:26
 #, python-format
 msgid ""
@@ -561,16 +612,16 @@ msgid "Already have an account?"
 msgstr "Já possui uma conta?"
 
 #: crate_project/templates/account/signup.html:34
-#: crate_project/templates/django_openid/register.html:21
+#: crate_project/templates/django_openid/register.html:23
 msgid "Sign up"
-msgstr ""
+msgstr "Registre-se"
 
 #: crate_project/templates/account/signup.html:51
 msgid "Sign in with OpenID"
 msgstr ""
 
 #: crate_project/templates/account/signup.html:57
-#: crate_project/templates/django_openid/register.html:32
+#: crate_project/templates/django_openid/register.html:34
 #, python-format
 msgid ""
 "If you have any trouble creating your account, contact us at <a "
@@ -668,22 +719,22 @@ msgstr "Entrar"
 msgid "Log In to OpenID"
 msgstr "Efetue login para OpenID"
 
-#: crate_project/templates/django_openid/register.html:3
-#: crate_project/templates/django_openid/register.html:6
+#: crate_project/templates/django_openid/register.html:5
+#: crate_project/templates/django_openid/register.html:8
 msgid "Choose a Username"
 msgstr "Escolha um nome de usuário"
 
-#: crate_project/templates/django_openid/register.html:9
+#: crate_project/templates/django_openid/register.html:11
 msgid "Please correct the errors below:"
 msgstr "Por favor, corrija os erros abaixo:"
 
-#: crate_project/templates/django_openid/register.html:12
+#: crate_project/templates/django_openid/register.html:14
 msgid ""
 "Now that you have logged in with your OpenID, we need you to choose a "
 "username for this site."
 msgstr "Agora que você já logado com sua OpenID, precisamos que você para escolha um nome de usuário para este site."
 
-#: crate_project/templates/django_openid/register.html:30
+#: crate_project/templates/django_openid/register.html:32
 #, python-format
 msgid ""
 "<strong>Already have an account?</strong> <a "
@@ -691,7 +742,7 @@ msgid ""
 "your existing account."
 msgstr "<strong>Já possui uma conta?</strong><a href=\"%(acct_login_openid_url)s\">entre</a> para associar o seu OpenID à sua conta existente."
 
-#: crate_project/templates/django_openid/register.html:31
+#: crate_project/templates/django_openid/register.html:33
 #, python-format
 msgid ""
 "By clicking &quot;Sign Up&quot;, you are indicating that you have read and "
@@ -733,6 +784,11 @@ msgstr ""
 msgid "The confirmation key you provided is invalid."
 msgstr ""
 
+#: crate_project/templates/favorites/favorite_list.html:3
+#: crate_project/templates/favorites/favorite_list.html:7
+msgid "My Favorites"
+msgstr "Meus Favoritos"
+
 #: crate_project/templates/favorites/favorite_list.html:19
 msgid "You have no Favorites"
 msgstr "Você não tem Favoritos"
@@ -745,35 +801,101 @@ msgstr "Marque este pacote como favorito"
 msgid "Log in to Favorite this package"
 msgstr "Faça o log in para marcar este pacote como favorito"
 
-#: crate_project/templates/packages/release_detail.html:32
-msgid "Install"
-msgstr "Instalar"
+#: crate_project/templates/lists/button.html:5
+msgid "Lists"
+msgstr ""
 
-#: crate_project/templates/packages/release_detail.html:39
+#: crate_project/templates/lists/button.html:12
+#, python-format
+msgid "Remove from %(listname)s"
+msgstr ""
+
+#: crate_project/templates/lists/button.html:18
+#, python-format
+msgid "Add to %(listname)s"
+msgstr ""
+
+#: crate_project/templates/lists/button.html:28
+msgid "Add to a new List"
+msgstr ""
+
+#: crate_project/templates/lists/button.html:30
+msgid "Sign in to use Lists"
+msgstr ""
+
+#: crate_project/templates/lists/list_detail.html:21
+msgid "This List is Empty"
+msgstr ""
+
+#: crate_project/templates/lists/list_list.html:3
+#: crate_project/templates/lists/list_list.html:9
+#, python-format
+msgid "%(username)s's lists"
+msgstr ""
+
+#: crate_project/templates/lists/list_list.html:20
+msgid "This user has no lists."
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:10
+#, python-format
+msgid "Remove %(package)s from %(list)s"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:17
+#, python-format
+msgid ""
+"Are you sure you want to remove <strong>%(package)s</strong> from "
+"<strong>%(list)s</strong>"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:25
+#: crate_project/templates/lists/modals.html:49
+msgid "Nevermind"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:26
+msgid "Yes, Remove It"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:36
+#, python-format
+msgid "Add %(package)s to a new List"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:50
+msgid "Create List"
+msgstr ""
+
+#: crate_project/templates/packages/release_detail.html:41
 msgid "Description"
 msgstr "Descrição"
 
-#: crate_project/templates/packages/release_detail.html:40
+#: crate_project/templates/packages/release_detail.html:42
 msgid "Changelog"
 msgstr "Log de Mudanças"
 
-#: crate_project/templates/packages/release_detail.html:41
+#: crate_project/templates/packages/release_detail.html:43
 msgid "License"
 msgstr "Licença"
 
-#: crate_project/templates/packages/release_detail.html:42
+#: crate_project/templates/packages/release_detail.html:44
 #: crate_project/templates/packages/partials/history.html:19
 msgid "Info"
 msgstr "Informação"
 
-#: crate_project/templates/packages/release_detail.html:43
+#: crate_project/templates/packages/release_detail.html:45
 msgid "Files"
 msgstr "Arquivos"
 
-#: crate_project/templates/packages/release_detail.html:44
+#: crate_project/templates/packages/release_detail.html:46
 #, python-format
 msgid "All Versions (%(version_count)s)"
 msgstr "Todas as Versões (%(version_count)s)"
+
+#: crate_project/templates/packages/release_detail.html:47
+msgid "History"
+msgstr "Histórico"
 
 #: crate_project/templates/packages/partials/description.html:8
 msgid "No Description Provided."
@@ -800,7 +922,7 @@ msgid "Size"
 msgstr "Tamanho"
 
 #: crate_project/templates/packages/partials/files.html:9
-#: crate_project/templates/packages/partials/sidebar.html:1
+#: crate_project/templates/packages/partials/sidebar.html:2
 msgid "Downloads"
 msgstr "Baixado"
 
@@ -874,15 +996,15 @@ msgstr "<span class=\"count\">%(count)s</span> baixado"
 msgid "<span class=\"count\">%(count)s</span> for this version"
 msgstr "<span class=\"count\">%(count)s</span> para esta versão"
 
-#: crate_project/templates/packages/partials/sidebar.html:14
+#: crate_project/templates/packages/partials/sidebar.html:15
 msgid "Evaluation"
 msgstr "Avaliação"
 
-#: crate_project/templates/packages/partials/sidebar.html:14
+#: crate_project/templates/packages/partials/sidebar.html:15
 msgid "mouse over for details"
 msgstr "ponteiro acima para detalhes"
 
-#: crate_project/templates/packages/partials/sidebar.html:36
+#: crate_project/templates/packages/partials/sidebar.html:37
 msgid "Latest Versions"
 msgstr "Últimas versões"
 
@@ -942,9 +1064,3 @@ msgstr ""
 #, python-format
 msgid "<span class=\"count\">%(downloads)s</span> downloads"
 msgstr "<span class=\"count\">%(downloads)s</span> baixados"
-
-#~ msgid "Crate is a better Python package index."
-#~ msgstr ""
-
-#~ msgid "Why Crate?"
-#~ msgstr ""

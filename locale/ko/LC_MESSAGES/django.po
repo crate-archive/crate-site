@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crate.io\n"
 "Report-Msgid-Bugs-To: support@crate.io\n"
-"POT-Creation-Date: 2012-04-23 09:49-0400\n"
-"PO-Revision-Date: 2012-04-23 14:18+0000\n"
+"POT-Creation-Date: 2012-05-02 17:04-0400\n"
+"PO-Revision-Date: 2012-05-02 21:05+0000\n"
 "Last-Translator: Donald Stufft <donald.stufft@gmail.com>\n"
 "Language-Team: Korean (Korea) (http://www.transifex.net/projects/p/crateio/language/ko_KR/)\n"
 "MIME-Version: 1.0\n"
@@ -44,6 +44,40 @@ msgstr "파일 추가됨"
 #: crate_project/apps/history/models.py:21
 msgid "File Removed"
 msgstr "파일 삭제됨"
+
+#: crate_project/apps/lists/models.py:12
+msgid "Name"
+msgstr "이름"
+
+#: crate_project/apps/lists/models.py:17
+msgid "Private List"
+msgstr ""
+
+#: crate_project/apps/lists/models.py:17
+msgid "Private lists are visible only to you."
+msgstr ""
+
+#: crate_project/apps/lists/models.py:19
+msgid "Packages"
+msgstr ""
+
+#: crate_project/apps/lists/views.py:34 crate_project/apps/lists/views.py:80
+#, python-format
+msgid "Successfully added %(package)s to %(list)s."
+msgstr ""
+
+#: crate_project/apps/lists/views.py:48 crate_project/apps/lists/views.py:124
+msgid "Package does not exist"
+msgstr ""
+
+#: crate_project/apps/lists/views.py:58 crate_project/apps/lists/views.py:126
+msgid "List does not exist"
+msgstr ""
+
+#: crate_project/apps/lists/views.py:113
+#, python-format
+msgid "Successfully removed %(package)s from %(list)s."
+msgstr ""
 
 #: crate_project/apps/packages/evaluators.py:25
 msgid "PEP386 Compatibility"
@@ -136,15 +170,15 @@ msgstr "<a href=\"%s\">Read The Docs</a>에 문서 있음"
 msgid "Unavailable on <a href=\"http://readthedocs.org/\">Read The Docs</a>"
 msgstr "<a href=\"http://readthedocs.org/\">Read The Docs</a>에 문서 없음"
 
-#: crate_project/apps/packages/models.py:343
+#: crate_project/apps/packages/models.py:344
 msgid "Source"
 msgstr "소스"
 
-#: crate_project/apps/packages/models.py:348
+#: crate_project/apps/packages/models.py:349
 msgid "Dumb Binary Distribution"
 msgstr ""
 
-#: crate_project/apps/packages/models.py:349
+#: crate_project/apps/packages/models.py:350
 msgid "Windows Installer Binary Distribution"
 msgstr "Windows 설치 바이너리 배포본"
 
@@ -173,7 +207,7 @@ msgstr "릴리즈된 것만"
 
 #: crate_project/apps/search/forms.py:17
 #: crate_project/templates/homepage.html:28
-#: crate_project/templates/site_base.html:19
+#: crate_project/templates/site_base.html:22
 msgid "Search"
 msgstr "검색"
 
@@ -237,6 +271,24 @@ msgid ""
 "          "
 msgstr ""
 
+#: crate_project/templates/_footer.html:11
+msgid "Hosted by"
+msgstr ""
+
+#: crate_project/templates/_footer.html:13
+#: crate_project/templates/_footer.html:14
+msgid "Hosted by Gondor"
+msgstr ""
+
+#: crate_project/templates/_footer.html:20
+msgid "Resolved by"
+msgstr ""
+
+#: crate_project/templates/_footer.html:22
+#: crate_project/templates/_footer.html:23
+msgid "Resolved by Dyn"
+msgstr ""
+
 #: crate_project/templates/homepage.html:3
 msgid "Welcome"
 msgstr "어서오세요"
@@ -255,15 +307,13 @@ msgstr ""
 msgid "%(number)s <span class=\"info-label\">downloads</span>"
 msgstr ""
 
-#: crate_project/templates/site_base.html:8
+#: crate_project/templates/site_base.html:11
 msgid "Beta"
 msgstr "베타"
 
-#: crate_project/templates/site_base.html:14
-#: crate_project/templates/favorites/favorite_list.html:3
-#: crate_project/templates/favorites/favorite_list.html:7
-msgid "My Favorites"
-msgstr "내 즐겨찾기"
+#: crate_project/templates/site_base.html:17
+msgid "My Lists"
+msgstr ""
 
 #: crate_project/templates/account/_terms.html:4
 #, python-format
@@ -371,7 +421,7 @@ msgstr "로그인"
 
 #: crate_project/templates/account/login.html:9
 #: crate_project/templates/account/login.html:40
-#: crate_project/templates/account/login.html:57
+#: crate_project/templates/account/login.html:60
 #: crate_project/templates/account/signup.html:18
 #: crate_project/templates/django_openid/login.html:17
 msgid "Log in"
@@ -405,18 +455,18 @@ msgstr "암호를 잃어버리셨나요?"
 msgid "Log in with an existing account"
 msgstr ""
 
-#: crate_project/templates/account/login.html:46
+#: crate_project/templates/account/login.html:49
 #: crate_project/templates/account/signup.html:39
 msgid "Or sign in with your OpenID"
 msgstr "또는 OpenID로 로그인"
 
-#: crate_project/templates/account/login.html:49
+#: crate_project/templates/account/login.html:52
 #: crate_project/templates/account/signup.html:44
 #: crate_project/templates/django_openid/associations.html:42
 msgid "OpenID Identifier"
 msgstr "OpenID 주소"
 
-#: crate_project/templates/account/login.html:63
+#: crate_project/templates/account/login.html:66
 #: crate_project/templates/django_openid/login.html:26
 #, python-format
 msgid ""
@@ -560,7 +610,7 @@ msgid "Already have an account?"
 msgstr "이미 아이디 있으세요?"
 
 #: crate_project/templates/account/signup.html:34
-#: crate_project/templates/django_openid/register.html:21
+#: crate_project/templates/django_openid/register.html:23
 msgid "Sign up"
 msgstr "등록"
 
@@ -569,7 +619,7 @@ msgid "Sign in with OpenID"
 msgstr ""
 
 #: crate_project/templates/account/signup.html:57
-#: crate_project/templates/django_openid/register.html:32
+#: crate_project/templates/django_openid/register.html:34
 #, python-format
 msgid ""
 "If you have any trouble creating your account, contact us at <a "
@@ -667,22 +717,22 @@ msgstr "로그인"
 msgid "Log In to OpenID"
 msgstr "OpenID로 로그인"
 
-#: crate_project/templates/django_openid/register.html:3
-#: crate_project/templates/django_openid/register.html:6
+#: crate_project/templates/django_openid/register.html:5
+#: crate_project/templates/django_openid/register.html:8
 msgid "Choose a Username"
 msgstr "아이디를 정하세요"
 
-#: crate_project/templates/django_openid/register.html:9
+#: crate_project/templates/django_openid/register.html:11
 msgid "Please correct the errors below:"
 msgstr "잘못된 것들을 바로잡아 주세요:"
 
-#: crate_project/templates/django_openid/register.html:12
+#: crate_project/templates/django_openid/register.html:14
 msgid ""
 "Now that you have logged in with your OpenID, we need you to choose a "
 "username for this site."
 msgstr "OpenID로 로그인이 잘 되었습니다. 이제 이 사이트에서 쓸 아이디를 골라주세요."
 
-#: crate_project/templates/django_openid/register.html:30
+#: crate_project/templates/django_openid/register.html:32
 #, python-format
 msgid ""
 "<strong>Already have an account?</strong> <a "
@@ -690,7 +740,7 @@ msgid ""
 "your existing account."
 msgstr "<strong>아이디 이미 있으세요?</strong> OpenID를 이미 존재하는 아이디에 연결하기 위해 <a href=\"%(acct_login_openid_url)s\">로그인</a>하세요."
 
-#: crate_project/templates/django_openid/register.html:31
+#: crate_project/templates/django_openid/register.html:33
 #, python-format
 msgid ""
 "By clicking &quot;Sign Up&quot;, you are indicating that you have read and "
@@ -732,6 +782,11 @@ msgstr ""
 msgid "The confirmation key you provided is invalid."
 msgstr ""
 
+#: crate_project/templates/favorites/favorite_list.html:3
+#: crate_project/templates/favorites/favorite_list.html:7
+msgid "My Favorites"
+msgstr "내 즐겨찾기"
+
 #: crate_project/templates/favorites/favorite_list.html:19
 msgid "You have no Favorites"
 msgstr "즐겨찾는 패키지가 아직 하나도 없습니다."
@@ -744,35 +799,101 @@ msgstr "즐겨찾기에 추가"
 msgid "Log in to Favorite this package"
 msgstr "로그인하고 즐겨찾기에 추가"
 
-#: crate_project/templates/packages/release_detail.html:32
-msgid "Install"
-msgstr "깔기"
+#: crate_project/templates/lists/button.html:5
+msgid "Lists"
+msgstr ""
 
-#: crate_project/templates/packages/release_detail.html:39
+#: crate_project/templates/lists/button.html:12
+#, python-format
+msgid "Remove from %(listname)s"
+msgstr ""
+
+#: crate_project/templates/lists/button.html:18
+#, python-format
+msgid "Add to %(listname)s"
+msgstr ""
+
+#: crate_project/templates/lists/button.html:28
+msgid "Add to a new List"
+msgstr ""
+
+#: crate_project/templates/lists/button.html:30
+msgid "Sign in to use Lists"
+msgstr ""
+
+#: crate_project/templates/lists/list_detail.html:21
+msgid "This List is Empty"
+msgstr ""
+
+#: crate_project/templates/lists/list_list.html:3
+#: crate_project/templates/lists/list_list.html:9
+#, python-format
+msgid "%(username)s's lists"
+msgstr ""
+
+#: crate_project/templates/lists/list_list.html:20
+msgid "This user has no lists."
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:10
+#, python-format
+msgid "Remove %(package)s from %(list)s"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:17
+#, python-format
+msgid ""
+"Are you sure you want to remove <strong>%(package)s</strong> from "
+"<strong>%(list)s</strong>"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:25
+#: crate_project/templates/lists/modals.html:49
+msgid "Nevermind"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:26
+msgid "Yes, Remove It"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:36
+#, python-format
+msgid "Add %(package)s to a new List"
+msgstr ""
+
+#: crate_project/templates/lists/modals.html:50
+msgid "Create List"
+msgstr ""
+
+#: crate_project/templates/packages/release_detail.html:41
 msgid "Description"
 msgstr "설명"
 
-#: crate_project/templates/packages/release_detail.html:40
+#: crate_project/templates/packages/release_detail.html:42
 msgid "Changelog"
 msgstr "변경된 사항"
 
-#: crate_project/templates/packages/release_detail.html:41
+#: crate_project/templates/packages/release_detail.html:43
 msgid "License"
 msgstr "라이센스"
 
-#: crate_project/templates/packages/release_detail.html:42
+#: crate_project/templates/packages/release_detail.html:44
 #: crate_project/templates/packages/partials/history.html:19
 msgid "Info"
 msgstr "정보"
 
-#: crate_project/templates/packages/release_detail.html:43
+#: crate_project/templates/packages/release_detail.html:45
 msgid "Files"
 msgstr "파일"
 
-#: crate_project/templates/packages/release_detail.html:44
+#: crate_project/templates/packages/release_detail.html:46
 #, python-format
 msgid "All Versions (%(version_count)s)"
 msgstr "모든 버전 (%(version_count)s)"
+
+#: crate_project/templates/packages/release_detail.html:47
+msgid "History"
+msgstr "이력"
 
 #: crate_project/templates/packages/partials/description.html:8
 msgid "No Description Provided."
@@ -799,7 +920,7 @@ msgid "Size"
 msgstr "용량"
 
 #: crate_project/templates/packages/partials/files.html:9
-#: crate_project/templates/packages/partials/sidebar.html:1
+#: crate_project/templates/packages/partials/sidebar.html:2
 msgid "Downloads"
 msgstr "다운로드 수"
 
@@ -873,15 +994,15 @@ msgstr "총 <span class=\"count\">%(count)s</span>번 다운로드"
 msgid "<span class=\"count\">%(count)s</span> for this version"
 msgstr "해당 버전 <span class=\"count\">%(count)s</span>번 다운로드"
 
-#: crate_project/templates/packages/partials/sidebar.html:14
+#: crate_project/templates/packages/partials/sidebar.html:15
 msgid "Evaluation"
 msgstr ""
 
-#: crate_project/templates/packages/partials/sidebar.html:14
+#: crate_project/templates/packages/partials/sidebar.html:15
 msgid "mouse over for details"
 msgstr "마우스를 올라면 자세한 정보가 나옵니다"
 
-#: crate_project/templates/packages/partials/sidebar.html:36
+#: crate_project/templates/packages/partials/sidebar.html:37
 msgid "Latest Versions"
 msgstr "최근 버전"
 
@@ -941,9 +1062,3 @@ msgstr ""
 #, python-format
 msgid "<span class=\"count\">%(downloads)s</span> downloads"
 msgstr "<span class=\"count\">%(downloads)s</span>번 다운로드"
-
-#~ msgid "Crate is a better Python package index."
-#~ msgstr ""
-
-#~ msgid "Why Crate?"
-#~ msgstr ""
