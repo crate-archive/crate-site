@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crate VERSION\n"
 "Report-Msgid-Bugs-To: support@crate.io\n"
-"POT-Creation-Date: 2012-05-02 00:59-0400\n"
+"POT-Creation-Date: 2012-05-02 17:04-0400\n"
 "PO-Revision-Date: 2012-04-23 06:53-0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -42,36 +42,36 @@ msgstr ""
 msgid "File Removed"
 msgstr ""
 
-#: crate_project/apps/lists/models.py:10
+#: crate_project/apps/lists/models.py:12
 msgid "Name"
 msgstr ""
 
-#: crate_project/apps/lists/models.py:11
+#: crate_project/apps/lists/models.py:17
 msgid "Private List"
 msgstr ""
 
-#: crate_project/apps/lists/models.py:11
+#: crate_project/apps/lists/models.py:17
 msgid "Private lists are visible only to you."
 msgstr ""
 
-#: crate_project/apps/lists/models.py:13
+#: crate_project/apps/lists/models.py:19
 msgid "Packages"
 msgstr ""
 
-#: crate_project/apps/lists/views.py:31 crate_project/apps/lists/views.py:77
+#: crate_project/apps/lists/views.py:34 crate_project/apps/lists/views.py:80
 #, python-format
 msgid "Successfully added %(package)s to %(list)s."
 msgstr ""
 
-#: crate_project/apps/lists/views.py:45 crate_project/apps/lists/views.py:113
+#: crate_project/apps/lists/views.py:48 crate_project/apps/lists/views.py:124
 msgid "Package does not exist"
 msgstr ""
 
-#: crate_project/apps/lists/views.py:55 crate_project/apps/lists/views.py:115
+#: crate_project/apps/lists/views.py:58 crate_project/apps/lists/views.py:126
 msgid "List does not exist"
 msgstr ""
 
-#: crate_project/apps/lists/views.py:102
+#: crate_project/apps/lists/views.py:113
 #, python-format
 msgid "Successfully removed %(package)s from %(list)s."
 msgstr ""
@@ -204,7 +204,7 @@ msgstr ""
 
 #: crate_project/apps/search/forms.py:17
 #: crate_project/templates/homepage.html:28
-#: crate_project/templates/site_base.html:21
+#: crate_project/templates/site_base.html:22
 msgid "Search"
 msgstr ""
 
@@ -306,6 +306,10 @@ msgstr ""
 
 #: crate_project/templates/site_base.html:11
 msgid "Beta"
+msgstr ""
+
+#: crate_project/templates/site_base.html:17
+msgid "My Lists"
 msgstr ""
 
 #: crate_project/templates/account/_terms.html:4
@@ -814,6 +818,20 @@ msgstr ""
 msgid "Sign in to use Lists"
 msgstr ""
 
+#: crate_project/templates/lists/list_detail.html:21
+msgid "This List is Empty"
+msgstr ""
+
+#: crate_project/templates/lists/list_list.html:3
+#: crate_project/templates/lists/list_list.html:9
+#, python-format
+msgid "%(username)s's lists"
+msgstr ""
+
+#: crate_project/templates/lists/list_list.html:20
+msgid "This user has no lists."
+msgstr ""
+
 #: crate_project/templates/lists/modals.html:10
 #, python-format
 msgid "Remove %(package)s from %(list)s"
@@ -1041,10 +1059,4 @@ msgstr ""
 #, python-format
 msgid "<span class=\"count\">%(downloads)s</span> downloads"
 msgstr ""
-
-#~ msgid "Why Crate?"
-#~ msgstr ""
-
-#~ msgid "Install"
-#~ msgstr ""
 
