@@ -1,0 +1,55 @@
+{% extends "account/base.html" %}
+
+{% block head_title %}{{ gettext("Social Accounts") }}{% endblock %}
+
+{% block body %}
+  <h1 class="account-heading">{{ gettext("Social Accounts") }}</h1>
+
+  <div class="row">
+    <div class="span10">
+      <table class="table table-striped">
+        {% for object in object_list %}
+          <tr>
+            <td>{{ object.provider }}</td>
+            <td>{{ object.uid }}</td>
+            <td><a class="remove" href="{{ url("socialauth_disconnect_individual", backend=object.provider, association_id=object.pk) }}?next={{ request.path }}">{{ gettext("remove") }}</a></td>
+          </tr>
+        {% else %}
+          <tr>
+            <td>{{ gettext("You don't have any social accounts associated.") }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span5">
+      <form action="{{ url("socialauth_begin", "openid") }}" method="POST" autocapitalize="off" class="form-horizontal">
+        <legend>{{ gettext("Associate an OpenID") }}</legend>
+
+        {{ csrf() }}
+
+        <div class="control-group">
+          <label class="control-label" for="openid_url">{{ gettext("OpenID Identifier") }}</label>
+          <div class="controls">
+            <input class="openid" type="text" name="openid_identifier" />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" value="{{ gettext("Sign in with OpenID") }}" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+
+    <div class="span5">
+      <h2 class="account-heading">{{ gettext("Or associate with") }}</h2>
+      <div class="login-image">
+        <a href="{{ url("socialauth_begin", "github") }}">
+          <img src="{{ static("img/auth/github.png") }}" />
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
