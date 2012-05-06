@@ -1,1 +1,11 @@
-{# provide sign up in sidebar here #}
+<div class="row">
+  <div class="offset1 span3">
+    <h2 class="account-heading">{{ gettext("Or sign in with") }}</h2>
+
+    <div class="login-image">
+      <a href="{{ url("socialauth_begin", "github") }}">
+        <img src="{{ static("img/auth/github.png") }}" />
+      </a>
+    </div>
+  </div>
+</div>
