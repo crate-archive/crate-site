@@ -32,7 +32,7 @@ urlpatterns = patterns("",
 
     url(r"^stats/", include("packages.stats.urls")),
     url(r"^help/", include("helpdocs.urls")),
-    url(r"^api/", include("crate_project.api_urls")),
+    url(r"^api/", include("crateweb.api_urls")),
 
     url(r"^s/(?P<path>.+)?", "crate.views.simple_redirect", name="simple_redirect"),
 

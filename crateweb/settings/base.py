@@ -105,12 +105,12 @@ MIDDLEWARE_CLASSES = [
     "account.middleware.LocaleMiddleware",
 ]
 
-ROOT_URLCONF = "crate_project.urls"
-ROOT_HOSTCONF = "crate_project.hosts"
+ROOT_URLCONF = "crateweb.urls"
+ROOT_HOSTCONF = "crateweb.hosts"
 
 DEFAULT_HOST = "default"
 
-WSGI_APPLICATION = "crate_project.wsgi.application"
+WSGI_APPLICATION = "crateweb.wsgi.application"
 
 TEMPLATE_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),

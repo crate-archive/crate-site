@@ -1,4 +1,4 @@
-crate_project/site_media/
+crateweb/site_media/
 .gondor/site_key
 celeryev.pid
 *.pyc
