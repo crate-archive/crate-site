@@ -3,7 +3,6 @@ from django.core.exceptions import MultipleObjectsReturned
 from account.models import EmailAddress
 
 from social_auth.utils import setting
-from social_auth.models import User
 from social_auth.backends.pipeline import warn_setting
 from social_auth.backends.exceptions import AuthException
 
