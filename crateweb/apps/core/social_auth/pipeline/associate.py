@@ -23,5 +23,5 @@ def associate_by_email(details, *args, **kwargs):
             return {"user": address.user}
         except MultipleObjectsReturned:
             raise AuthException(kwargs['backend'], 'Not unique email address.')
-        except User.DoesNotExist:
+        except EmailAddress.DoesNotExist:
             pass
