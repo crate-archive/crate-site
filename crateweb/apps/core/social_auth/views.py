@@ -38,7 +38,7 @@ def disconnect(request, backend, association_id=None):
     backend.disconnect(request.user, association_id)
     messages.success(request, _("Removed the %(provider)s account '%(uid)s'.") % {
         "provider": usa.provider,
-        "uid": usa.uid,
+        "uid": usa.extra_data.get("display", usa.uid) if usa.extra_data is not None else usa.uid,
     })
 
     return HttpResponseRedirect(url)
