@@ -104,3 +104,10 @@ def css_class(field):
 @register.function
 def user_display(user):
     return pinax_user_display(user)
+
+
+@register.function
+def null_get(d, key, fallback=None):
+    if d is None:
+        return fallback
+    return d.get(key, fallback)
