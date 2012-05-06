@@ -30,7 +30,7 @@
         </fieldset>
       </form>
 
-      <form action="/openid/register/" method="POST" autocapitalize="off" class="form-horizontal">
+      <form action="{{ url("socialauth_begin", "openid") }}" method="POST" autocapitalize="off" class="form-horizontal">
           <legend>{{ gettext("Or sign in with your OpenID") }}</legend>
 
           {{ csrf() }}
@@ -38,7 +38,7 @@
           <div class="control-group">
             <label class="control-label" for="openid_url">{{ gettext("OpenID Identifier") }}</label>
             <div class="controls">
-              <input class="openid" type="text" name="openid_url" />
+              <input class="openid" type="text" name="openid_identifier" />
             </div>
           </div>
 
@@ -46,6 +46,7 @@
             <input type="submit" value="{{ gettext("Sign in with OpenID") }}" class="btn btn-primary" />
           </div>
         </form>
+      </div>
     </div>
 
     <div class="span4">
