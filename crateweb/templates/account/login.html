@@ -30,22 +30,21 @@
       </form>
 
       <form action="{{ url("socialauth_begin", "openid") }}" method="POST" autocapitalize="off" class="form-horizontal">
-          <legend>{{ gettext("Or sign in with your OpenID") }}</legend>
+        <legend>{{ gettext("Or sign in with your OpenID") }}</legend>
 
-          {{ csrf() }}
+        {{ csrf() }}
 
-          <div class="control-group">
-            <label class="control-label" for="openid_url">{{ gettext("OpenID Identifier") }}</label>
-            <div class="controls">
-              <input class="openid" type="text" name="openid_identifier" />
-            </div>
+        <div class="control-group">
+          <label class="control-label" for="openid_url">{{ gettext("OpenID Identifier") }}</label>
+          <div class="controls">
+            <input class="openid" type="text" name="openid_identifier" />
           </div>
+        </div>
 
-          <div class="form-actions">
-            <input type="submit" value="{{ gettext("Sign in with OpenID") }}" class="btn btn-primary" />
-          </div>
-        </form>
-      </div>
+        <div class="form-actions">
+          <input type="submit" value="{{ gettext("Sign in with OpenID") }}" class="btn btn-primary" />
+        </div>
+      </form>
     </div>
 
     <div class="span4">
