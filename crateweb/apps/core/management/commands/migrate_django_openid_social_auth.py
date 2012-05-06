@@ -16,4 +16,5 @@ class Command(BaseCommand):
 
         for openid in cursor.fetchall():
             user = User.objects.get(pk=openid[0])
-            UserSocialAuth.objects.get_or_create(user=user, provider="openid", uid=openid[1])
+            print user.username, openid[1]
+            UserSocialAuth.objects.get_or_create(provider="openid", uid=openid[1], defaults={"user": user})
