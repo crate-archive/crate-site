@@ -15,6 +15,8 @@ freshdb:
 
 reloaddb: freshdb
 	pg_restore -d $(DBNAME) -j 8 --no-owner --no-acl $(DUMPPATH)
+
+updb:
 	python manage.py syncdb
 	python manage.py migrate
 	python manage.py dummy_passwords
