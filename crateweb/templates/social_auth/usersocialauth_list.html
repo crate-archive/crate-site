@@ -43,11 +43,17 @@
       </form>
     </div>
 
-    <div class="span5">
+    <div class="span5 sidebyside">
       <h2 class="account-heading">{{ gettext("Or associate with") }}</h2>
       <div class="login-image">
         <a href="{{ url("socialauth_begin", "github") }}">
           <img src="{{ static("img/auth/github.png") }}" />
+        </a>
+      </div>
+
+      <div class="login-image">
+        <a href="{{ url("socialauth_begin", "bitbucket") }}">
+          <img src="{{ static("img/auth/bitbucket.png") }}" />
         </a>
       </div>
     </div>
