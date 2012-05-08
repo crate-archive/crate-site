@@ -71,10 +71,12 @@ class PyPIPackage(object):
 
         self.fetch()
         self.build()
-        self.store()
 
-        if download:
-            self.download()
+        with transaction.commit_on_success():
+            self.store()
+
+            if download:
+                self.download()
 
     def delete(self):
         with transaction.commit_on_success():
@@ -225,114 +227,113 @@ class PyPIPackage(object):
         package, _ = Package.objects.get_or_create(name=self.name)
 
         for data in self.data.values():
-            with transaction.commit_on_success():
-                try:
-                    release = Release.objects.get(package=package, version=data["version"])
-                except Release.DoesNotExist:
-                    release = Release(package=package, version=data["version"])
-                    release.full_clean()
-                    release.save()
-
-                # This is an extra database call but it should prevent ShareLocks
-                Release.objects.filter(pk=release.pk).select_for_update()
-
-                if release.hidden:
-                    release.hidden = False
-
-                for key, value in data.iteritems():
-                    if key in ["package", "version"]:
-                        # Short circuit package and version
-                        continue
-
-                    if key == "uris":
-                        ReleaseURI.objects.filter(release=release).delete()
-                        for label, uri in value.iteritems():
-                            try:
-                                ReleaseURI.objects.get(release=release, label=label, uri=uri)
-                            except ReleaseURI.DoesNotExist:
-                                try:
-                                    release_uri = ReleaseURI(release=release, label=label, uri=uri)
-                                    release_uri.full_clean()
-                                    release_uri.save(force_insert=True)
-                                except ValidationError:
-                                    logger.exception("%s, %s for %s-%s Invalid Data" % (label, uri, release.package.name, release.version))
-                    elif key == "classifiers":
-                        release.classifiers.clear()
-                        for classifier in value:
-                            try:
-                                trove = TroveClassifier.objects.get(trove=classifier)
-                            except TroveClassifier.DoesNotExist:
-                                trove = TroveClassifier(trove=classifier)
-                                trove.full_clean()
-                                trove.save(force_insert=True)
-                            release.classifiers.add(trove)
-                    elif key in ["requires", "provides", "obsoletes"]:
-                        model = {"requires": ReleaseRequire, "provides": ReleaseProvide, "obsoletes": ReleaseObsolete}.get(key)
-                        model.objects.filter(release=release).delete()
-                        for item in value:
-                            try:
-                                model.objects.get(release=release, **item)
-                            except model.DoesNotExist:
-                                m = model(release=release, **item)
-                                m.full_clean()
-                                m.save(force_insert=True)
-                    elif key == "files":
-                        files = ReleaseFile.objects.filter(release=release)
-                        filenames = dict([(x.filename, x) for x in files])
-
-                        for f in value:
-                            try:
-                                rf = ReleaseFile.objects.get(
-                                        release=release,
-                                        type=f["type"],
-                                        filename=f["filename"],
-                                        python_version=f["python_version"],
-                                    )
-
-                                for k, v in f.iteritems():
-                                    if k in ["digests", "file", "filename", "type", "python_version"]:
-                                        continue
-                                    setattr(rf, k, v)
-
-                                rf.hidden = False
-                                rf.full_clean()
-                                rf.save()
-
-                            except ReleaseFile.DoesNotExist:
-                                rf = ReleaseFile(
-                                        release=release,
-                                        type=f["type"],
-                                        filename=f["filename"],
-                                        python_version=f["python_version"],
-                                        **dict([(k, v) for k, v in f.iteritems() if k not in ["digests", "file", "filename", "type", "python_version"]])
-                                    )
-
-                                rf.hidden = False
-                                rf.full_clean()
-                                rf.save()
-
-                            if f["filename"] in filenames.keys():
-                                del filenames[f["filename"]]
-
-                        if filenames:
-                            for rf in ReleaseFile.objects.filter(pk__in=[f.pk for f in filenames.values()]):
-                                rf.hidden = True
-                                rf.save()
-                    else:
-                        setattr(release, key, value)
-
-                while True:
-                    try:
-                        release.full_clean()
-                    except ValidationError as e:
-                        if "download_uri" in e.message_dict:
-                            release.download_uri = ""
-                            logger.exception("%s-%s Release Validation Error %s" % (release.package.name, release.version, str(e.message_dict)))
-                        else:
-                            raise
-                    else:
-                        break
+            try:
+                release = Release.objects.get(package=package, version=data["version"])
+            except Release.DoesNotExist:
+                release = Release(package=package, version=data["version"])
+                release.full_clean()
                 release.save()
+
+            # This is an extra database call but it should prevent ShareLocks
+            Release.objects.filter(pk=release.pk).select_for_update()
+
+            if release.hidden:
+                release.hidden = False
+
+            for key, value in data.iteritems():
+                if key in ["package", "version"]:
+                    # Short circuit package and version
+                    continue
+
+                if key == "uris":
+                    ReleaseURI.objects.filter(release=release).delete()
+                    for label, uri in value.iteritems():
+                        try:
+                            ReleaseURI.objects.get(release=release, label=label, uri=uri)
+                        except ReleaseURI.DoesNotExist:
+                            try:
+                                release_uri = ReleaseURI(release=release, label=label, uri=uri)
+                                release_uri.full_clean()
+                                release_uri.save(force_insert=True)
+                            except ValidationError:
+                                logger.exception("%s, %s for %s-%s Invalid Data" % (label, uri, release.package.name, release.version))
+                elif key == "classifiers":
+                    release.classifiers.clear()
+                    for classifier in value:
+                        try:
+                            trove = TroveClassifier.objects.get(trove=classifier)
+                        except TroveClassifier.DoesNotExist:
+                            trove = TroveClassifier(trove=classifier)
+                            trove.full_clean()
+                            trove.save(force_insert=True)
+                        release.classifiers.add(trove)
+                elif key in ["requires", "provides", "obsoletes"]:
+                    model = {"requires": ReleaseRequire, "provides": ReleaseProvide, "obsoletes": ReleaseObsolete}.get(key)
+                    model.objects.filter(release=release).delete()
+                    for item in value:
+                        try:
+                            model.objects.get(release=release, **item)
+                        except model.DoesNotExist:
+                            m = model(release=release, **item)
+                            m.full_clean()
+                            m.save(force_insert=True)
+                elif key == "files":
+                    files = ReleaseFile.objects.filter(release=release)
+                    filenames = dict([(x.filename, x) for x in files])
+
+                    for f in value:
+                        try:
+                            rf = ReleaseFile.objects.get(
+                                    release=release,
+                                    type=f["type"],
+                                    filename=f["filename"],
+                                    python_version=f["python_version"],
+                                )
+
+                            for k, v in f.iteritems():
+                                if k in ["digests", "file", "filename", "type", "python_version"]:
+                                    continue
+                                setattr(rf, k, v)
+
+                            rf.hidden = False
+                            rf.full_clean()
+                            rf.save()
+
+                        except ReleaseFile.DoesNotExist:
+                            rf = ReleaseFile(
+                                    release=release,
+                                    type=f["type"],
+                                    filename=f["filename"],
+                                    python_version=f["python_version"],
+                                    **dict([(k, v) for k, v in f.iteritems() if k not in ["digests", "file", "filename", "type", "python_version"]])
+                                )
+
+                            rf.hidden = False
+                            rf.full_clean()
+                            rf.save()
+
+                        if f["filename"] in filenames.keys():
+                            del filenames[f["filename"]]
+
+                    if filenames:
+                        for rf in ReleaseFile.objects.filter(pk__in=[f.pk for f in filenames.values()]):
+                            rf.hidden = True
+                            rf.save()
+                else:
+                    setattr(release, key, value)
+
+            while True:
+                try:
+                    release.full_clean()
+                except ValidationError as e:
+                    if "download_uri" in e.message_dict:
+                        release.download_uri = ""
+                        logger.exception("%s-%s Release Validation Error %s" % (release.package.name, release.version, str(e.message_dict)))
+                    else:
+                        raise
+                else:
+                    break
+            release.save()
 
         # Mark unsynced as deleted when bulk processing
         if self.bulk:
@@ -358,99 +359,98 @@ class PyPIPackage(object):
 
         for data in self.data.values():
             try:
-                with transaction.commit_on_success():
+                if pypi_pages.get("has_sig"):
+                    simple_html = lxml.html.fromstring(pypi_pages["simple"])
+                    simple_html.make_links_absolute(urlparse.urljoin(SIMPLE_URL, data["package"]) + "/")
+
+                    verified_md5_hashes = {}
+
+                    for link in simple_html.iterlinks():
+                            m = _md5_re.search(link[2])
+                            if m:
+                                url, md5_hash = m.groups()
+                                verified_md5_hashes[url] = md5_hash
+
+                package = Package.objects.get(name=data["package"])
+                release = Release.objects.filter(package=package, version=data["version"]).select_for_update()
+
+                for release_file in ReleaseFile.objects.filter(release=release, filename__in=[x["filename"] for x in data["files"]]).select_for_update():
+                    file_data = [x for x in data["files"] if x["filename"] == release_file.filename][0]
+
                     if pypi_pages.get("has_sig"):
-                        simple_html = lxml.html.fromstring(pypi_pages["simple"])
-                        simple_html.make_links_absolute(urlparse.urljoin(SIMPLE_URL, data["package"]) + "/")
+                        if verified_md5_hashes[file_data["file"]].lower() != file_data["digests"]["md5"].lower():
+                            raise Exception("MD5 does not match simple API md5 [Verified by ServerSig]")  # @@@ Custom Exception
 
-                        verified_md5_hashes = {}
+                    datastore_key = "crate:pypi:download:%(url)s" % {"url": file_data["file"]}
+                    stored_file_data = self.datastore.hgetall(datastore_key)
 
-                        for link in simple_html.iterlinks():
-                                m = _md5_re.search(link[2])
-                                if m:
-                                    url, md5_hash = m.groups()
-                                    verified_md5_hashes[url] = md5_hash
+                    headers = None
 
-                    package = Package.objects.get(name=data["package"])
-                    release = Release.objects.filter(package=package, version=data["version"]).select_for_update()
+                    if stored_file_data and self.skip_modified:
+                        # Stored data exists for this file
+                        if release_file.file:
+                            try:
+                                release_file.file.read()
+                            except IOError:
+                                pass
+                            else:
+                                # We already have a file
+                                if stored_file_data["md5"].lower() == file_data["digests"]["md5"].lower():
+                                    # The supposed MD5 from PyPI matches our local
+                                    headers = {
+                                        "If-Modified-Since": stored_file_data["modified"],
+                                    }
 
-                    for release_file in ReleaseFile.objects.filter(release=release, filename__in=[x["filename"] for x in data["files"]]).select_for_update():
-                        file_data = [x for x in data["files"] if x["filename"] == release_file.filename][0]
+                    resp = requests.get(file_data["file"], headers=headers, prefetch=True)
 
-                        if pypi_pages.get("has_sig"):
-                            if verified_md5_hashes[file_data["file"]].lower() != file_data["digests"]["md5"].lower():
-                                raise Exception("MD5 does not match simple API md5 [Verified by ServerSig]")  # @@@ Custom Exception
+                    if resp.status_code == 304:
+                        logger.info("[DOWNLOAD] skipping %(filename)s because it has not been modified" % {"filename": release_file.filename})
+                        return
+                    logger.info("[DOWNLOAD] downloading %(filename)s" % {"filename": release_file.filename})
 
-                        datastore_key = "crate:pypi:download:%(url)s" % {"url": file_data["file"]}
-                        stored_file_data = self.datastore.hgetall(datastore_key)
+                    resp.raise_for_status()
 
-                        headers = None
+                    # Make sure the MD5 of the file we receive matched what we were told it is
+                    if hashlib.md5(resp.content).hexdigest().lower() != file_data["digests"]["md5"].lower():
+                        raise PackageHashMismatch("%s does not match %s for %s %s" % (
+                                                            hashlib.md5(resp.content).hexdigest().lower(),
+                                                            file_data["digests"]["md5"].lower(),
+                                                            file_data["type"],
+                                                            file_data["filename"],
+                                                        ))
 
-                        if stored_file_data and self.skip_modified:
-                            # Stored data exists for this file
-                            if release_file.file:
-                                try:
-                                    release_file.file.read()
-                                except IOError:
-                                    pass
-                                else:
-                                    # We already have a file
-                                    if stored_file_data["md5"].lower() == file_data["digests"]["md5"].lower():
-                                        # The supposed MD5 from PyPI matches our local
-                                        headers = {
-                                            "If-Modified-Since": stored_file_data["modified"],
-                                        }
+                    release_file.digest = "$".join(["sha256", hashlib.sha256(resp.content).hexdigest().lower()])
 
-                        resp = requests.get(file_data["file"], headers=headers, prefetch=True)
+                    release_file.full_clean()
+                    release_file.file.save(file_data["filename"], ContentFile(resp.content), save=False)
+                    release_file.save()
 
-                        if resp.status_code == 304:
-                            logger.info("[DOWNLOAD] skipping %(filename)s because it has not been modified" % {"filename": release_file.filename})
-                            return
-                        logger.info("[DOWNLOAD] downloading %(filename)s" % {"filename": release_file.filename})
-
-                        resp.raise_for_status()
-
-                        # Make sure the MD5 of the file we receive matched what we were told it is
-                        if hashlib.md5(resp.content).hexdigest().lower() != file_data["digests"]["md5"].lower():
-                            raise PackageHashMismatch("%s does not match %s for %s %s" % (
-                                                                hashlib.md5(resp.content).hexdigest().lower(),
-                                                                file_data["digests"]["md5"].lower(),
-                                                                file_data["type"],
-                                                                file_data["filename"],
-                                                            ))
-
-                        release_file.digest = "$".join(["sha256", hashlib.sha256(resp.content).hexdigest().lower()])
-
-                        release_file.full_clean()
-                        release_file.file.save(file_data["filename"], ContentFile(resp.content), save=False)
-                        release_file.save()
-
-                        Event.objects.create(
-                            package=release_file.release.package.name,
-                            version=release_file.release.version,
-                            action=Event.ACTIONS.file_add,
-                            data={
-                                "filename": release_file.filename,
-                                "digest": release_file.digest,
-                                "uri": release_file.get_absolute_url(),
-                            }
-                        )
-
-                        # Store data relating to this file (if modified etc)
-                        stored_file_data = {
-                            "md5": file_data["digests"]["md5"].lower(),
-                            "modified": resp.headers.get("Last-Modified"),
+                    Event.objects.create(
+                        package=release_file.release.package.name,
+                        version=release_file.release.version,
+                        action=Event.ACTIONS.file_add,
+                        data={
+                            "filename": release_file.filename,
+                            "digest": release_file.digest,
+                            "uri": release_file.get_absolute_url(),
                         }
+                    )
 
-                        if resp.headers.get("Last-Modified"):
-                            self.datastore.hmset(datastore_key, {
-                                "md5": file_data["digests"]["md5"].lower(),
-                                "modified": resp.headers["Last-Modified"],
-                            })
-                            # Set a year expire on the key so that stale entries disappear
-                            self.datastore.expire(datastore_key, 31556926)
-                        else:
-                            self.datastore.delete(datastore_key)
+                    # Store data relating to this file (if modified etc)
+                    stored_file_data = {
+                        "md5": file_data["digests"]["md5"].lower(),
+                        "modified": resp.headers.get("Last-Modified"),
+                    }
+
+                    if resp.headers.get("Last-Modified"):
+                        self.datastore.hmset(datastore_key, {
+                            "md5": file_data["digests"]["md5"].lower(),
+                            "modified": resp.headers["Last-Modified"],
+                        })
+                        # Set a year expire on the key so that stale entries disappear
+                        self.datastore.expire(datastore_key, 31556926)
+                    else:
+                        self.datastore.delete(datastore_key)
             except requests.HTTPError:
                 logger.exception("[DOWNLOAD ERROR]")
 
