@@ -7,6 +7,9 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        r = redis.StrictRedis(host=settings.GONDOR_REDIS_HOST, port=settings.GONDOR_REDIS_PORT, password=settings.GONDOR_REDIS_PASSWORD)
+        r = redis.StrictRedis(
+            host=settings.REDIS['default']['HOST'],
+            port=settings.REDIS['default']['PORT'],
+            password=settings.REDIS['default']['PASSWORD'])
         print r.get("crate:pypi:serverkey")
         print r.hgetall("crate:pypi:serverkey:headers")
